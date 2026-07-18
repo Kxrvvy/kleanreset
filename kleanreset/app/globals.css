@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Fonts ───────────────────────────────────────────
+     Bridges next/font → Tailwind. The vars on the right
+     are created by layout.tsx; these names are what you
+     actually type as classes.                            */
+  --font-sans: var(--font-hanken-grotesk);          /* font-sans    → body */
+  --font-display: var(--font-bricolage-grotesque);  /* font-display → headlines */
+  --font-mono: var(--font-space-mono);              /* font-mono    → eyebrows */
+
+  /* ── Greens ─────────────────────────────────────────── */
+  --color-pine: #0E4D3C;         /* primary: buttons, selected borders, eyebrows */
+  --color-pine-deep: #0A3729;    /* darkest: footer, dark bands */
+  --color-mint: #15C79A;         /* accent: checks, step badges, focus rings */
+  --color-mint-bright: #1FE0AD;  /* hover/glow, strip tagline */
+  --color-celadon: #7FDDC0;      /* description text on dark bg */
+  --color-sea-mist: #DDF3EB;     /* soft wash: icon chips, pills, hero gradient */
+
+  /* ── Neutrals ───────────────────────────────────────── */
+  --color-paper: #F9F9F9;        /* page background */
+  --color-paper2: #FBFCF9;       /* alternating sections */
+  --color-card: #FFFFFF;         /* card background */
+  --color-field: #F4F6F1;        /* booking inputs */
+  --color-line: #E6E9E3;         /* ← ADDED: card borders, dividers */
+  --color-ink: #10241C;          /* headings, body */
+  --color-ink-soft: #4C5A52;     /* secondary text */
+
+  /* ── Accents ────────────────────────────────────────── */
+  --color-lemon: #F4C64B;        /* logo dot, deep-clean badge */
+  --color-star-gold: #F0B21B;    /* rating star */
+
+  /* ── Radii ──────────────────────────────────────────── */
+  --radius-card: 16px;           /* rounded-card */
+  --radius-pill: 999px;          /* rounded-pill */
+}
