@@ -2,8 +2,9 @@ import {Hero} from "@/components/home/hero";
 import {HomeIntro} from "@/components/home/homeIntro";
 import {Services} from "@/components/home/services";
 import {Why} from "@/components/home/why";
-{/*import {How} from "@/components/home/how";
-import {CTA} from "@/components/home/cta";*/}
+import {How} from "@/components/home/how";
+import {CTA} from "@/components/home/cta";
+import { Footer } from "../layout/footer";
 
 export default function HomePage() {
     return (
@@ -12,8 +13,9 @@ export default function HomePage() {
             <HomeIntro />
             <Services />
             <Why />
-            {/*<How />
-            <CTA />*/}
+            <How />
+            <CTA />
+            <Footer />
         </>
     )
 }
