@@ -30,7 +30,7 @@ export function Footer() {
 
   return (
     <footer className="mt-auto bg-pine-deep text-celadon">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-6xl px-6 pb-6 pt-15">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand column */}
           <div className="space-y-4">

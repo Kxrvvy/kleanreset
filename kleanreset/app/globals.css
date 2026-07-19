@@ -11,7 +11,7 @@
 
   /* ── Greens ─────────────────────────────────────────── */
   --color-pine: #0E4D3C;         /* primary: buttons, selected borders, eyebrows */
-  --color-pine-deep: #0A3729;    /* darkest: footer, dark bands */
+  --color-pine-deep: #093A2D;    /* darkest: footer, dark bands */
   --color-mint: #15C79A;         /* accent: checks, step badges, focus rings */
   --color-mint-bright: #1FE0AD;  /* hover/glow, strip tagline */
   --color-celadon: #7FDDC0;      /* description text on dark bg */
@@ -20,6 +20,7 @@
   /* ── Neutrals ───────────────────────────────────────── */
   --color-paper: #F9F9F9;        /* page background */
   --color-paper2: #FBFCF9;       /* alternating sections */
+  --color-grayish: #F1F4EE;      /* CTA section BG */
   --color-card: #FFFFFF;         /* card background */
   --color-field: #F4F6F1;        /* booking inputs */
   --color-line: #E6E9E3;         /* ← ADDED: card borders, dividers */
