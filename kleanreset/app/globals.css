@@ -33,4 +33,6 @@
   /* ── Radii ──────────────────────────────────────────── */
   --radius-card: 16px;           /* rounded-card */
   --radius-pill: 999px;          /* rounded-pill */
+
+  --spacing-gutter: 55px;        /*gutter spacing*/
 }
