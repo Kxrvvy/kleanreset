@@ -8,12 +8,12 @@ const TABS = [
     {
         label: "Kitchen",
         items: [
-            "Countertops & backsplash wiped down",
+            "Wipe & disinfect countertops",
+            "Sanitize sink & fixtures",
+            "Empty bins & replace liners",
             "Stovetop & exterior of appliances cleaned",
-            "Sink scrubbed & disinfected",
             "Cabinet fronts wiped down",
             "Floors swept & mopped",
-            "Trash emptied & liner replaced",
         ],
     },
     {
@@ -54,24 +54,30 @@ const TABS = [
 export function HowItWorks() {
     const [active, setActive] = useState(0);
     const tab = TABS[active];
+    const left = tab.items.slice(0, 3);
+    const right = tab.items.slice(3);
 
     return (
-        <section id="checklist" className="scroll-mt-28 bg-paper2">
-            <div className="mx-auto max-w-6xl px-gutter py-16 md:py-24">
-                <div className="flex flex-col items-center gap-4 text-center">
+        <section id="checklist" className="scroll-mt-28">
+            <div className="px-[200px] py-16 md:py-24">
+                <div className="max-w-xl space-y-4 text-left">
                     <Eyebrow>HOW IT WORKS</Eyebrow>
-                    <h2 className="max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
+                    <h2 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
                         Exactly what gets done
                     </h2>
+                    <p className="text-ink-soft">
+                        No guesswork. Choose an area to see everything our team ticks off
+                        before we call it clean.
+                    </p>
                 </div>
 
-                <div className="mt-10 flex flex-wrap justify-center gap-3">
+                <div className="mt-8 flex flex-wrap gap-3">
                     {TABS.map((t, i) => (
                         <button
                             key={t.label}
                             type="button"
                             onClick={() => setActive(i)}
-                            className={`rounded-pill px-4 py-2 font-mono text-xs font-bold transition-colors ${
+                            className={`rounded-pill px-5 py-2.5 font-mono text-xs font-bold transition-colors ${
                                 i === active
                                     ? "bg-pine text-white"
                                     : "border border-line bg-card text-ink hover:bg-sea-mist/40"
@@ -82,19 +88,21 @@ export function HowItWorks() {
                     ))}
                 </div>
 
-                <ul className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-2">
-                    {tab.items.map((item) => (
-                        <li
-                            key={item}
-                            className="flex items-center gap-3 rounded-card border border-line bg-card p-4"
-                        >
-                            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-mint">
-                                <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
-                            </span>
-                            <span className="text-sm text-ink">{item}</span>
-                        </li>
+                <div className="mt-10 grid gap-x-16 gap-y-1 md:grid-cols-2">
+                    {[left, right].map((column, colIndex) => (
+                        <ul key={colIndex} className="space-y-1">
+                            {column.map((item) => (
+                                <li
+                                    key={item}
+                                    className="flex items-center gap-3 border-b border-dashed border-line py-3.5"
+                                >
+                                    <Check className="h-4 w-4 shrink-0 text-mint" strokeWidth={3} />
+                                    <span className="text-sm text-ink">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
                     ))}
-                </ul>
+                </div>
             </div>
         </section>
     );

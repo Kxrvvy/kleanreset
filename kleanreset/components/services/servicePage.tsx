@@ -11,12 +11,11 @@ export default function ServicePage() {
     return (
         <>
             <Hero />
-            <PillsNav />
             <Offer />
             <DentalFeature />
             <Pricing />
             <HowItWorks />
-            <section className="px-gutter py-16 md:py-24">
+            <section className="px-gutter py-12 md:pt-14 md:pb-10">
                 <TalkToUs />
             </section>
             <CTA />

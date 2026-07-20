@@ -91,19 +91,22 @@ const CARDS: Card[] = [
 export function Offer() {
     return (
         <section id="offer" className="scroll-mt-28">
-            <div className="mx-auto max-w-6xl px-gutter py-16 md:py-24">
-                <div className="flex flex-col items-center gap-4 text-center">
+            <div className="px-gutter py-16 md:py-24 bg-linear-to-b from-grayish to-sea-mist">
+                <div className="flex flex-col items-start gap-4 text-left">
                     <Eyebrow>WHAT WE OFFER</Eyebrow>
-                    <h2 className="max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
-                        Eight ways we keep your space spotless
+                    <h2 className="max-w-2xl font-display text-5xl font-extrabold leading-tight text-ink md:text-[40px]">
+                        We provide services for you
                     </h2>
+                    <p>
+                        Six ways we keep your space spotless — every one backed by the same satisfaction guarantee.
+                    </p>
                 </div>
 
-                <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-12 grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {CARDS.map(({ icon: Icon, title, description, cta, href, highlight }) => (
                         <div
                             key={title}
-                            className={`flex h-full flex-col gap-4 rounded-card border p-6 ${
+                            className={`flex h-57.5 w-84.75 flex-col gap-4 rounded-card border p-6 ${
                                 highlight
                                     ? "border-pine bg-pine text-white"
                                     : "border-line bg-card text-ink"

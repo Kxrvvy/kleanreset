@@ -12,8 +12,8 @@ const PILLS = [
 
 export function PillsNav() {
     return (
-        <nav aria-label="Jump to section" className="bg-grayish">
-            <ul className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3 px-gutter py-6">
+        <nav aria-label="Jump to section">
+            <ul className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3 px-gutter pb-10">
                 {PILLS.map((pill) => (
                     <li key={pill.label}>
                         <a
