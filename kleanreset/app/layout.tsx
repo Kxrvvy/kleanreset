@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Mono, Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import { Nav } from "@/components/layout/Nav";
+import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -36,7 +38,11 @@ export default function RootLayout({
       lang="en"
       className={`${spaceMono.variable} ${bricolageGrotesque.variable} ${hankenGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink font-sans">{children}</body>
+      <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
+        <Nav />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
