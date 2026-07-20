@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} ${bricolageGrotesque.variable} ${hankenGrotesk.variable} h-full antialiased`}
+      className={`${spaceMono.variable} ${bricolageGrotesque.variable} ${hankenGrotesk.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
         <Nav />
