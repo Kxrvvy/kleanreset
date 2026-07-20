@@ -14,7 +14,7 @@ const CREW = [
 export function Hero() {
     return (
         <section>
-            <div className="bg-linear-to-br from-sea-mist to-grayish">
+            <div className="bg-linear-to-b from-sea-mist to-grayish">
                 <div className="mx-auto grid max-w-347.5 items-center gap-8 px-gutter pt-28 pb-16 md:grid-cols-[2fr_2.2fr] md:gap-44.25 md:pt-32 md:pb-24">
                     {/* Left column */}
                     <div className="space-y-6">

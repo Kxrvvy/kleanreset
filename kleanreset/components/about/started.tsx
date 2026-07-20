@@ -3,7 +3,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 export function Started() {
     return (
         <section>
-            <div className="bg-linear-to-br from-grayish to-sea-mist">
+            <div className="bg-linear-to-b from-grayish to-sea-mist">
                 <div className="mx-auto grid max-w-350 grid-cols-[3fr_3fr] gap-37.5 px-20 pt-15.75 pb-16 md:pb-24">
                     {/* Left column */}
                     <div className="space-y-4">

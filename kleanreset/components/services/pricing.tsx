@@ -26,18 +26,22 @@ function priceRow(service: "standard" | "deep", beds: number, baths: number) {
         throw new Error(`Expected a firm price for ${service} ${beds}bed/${baths}bath`);
     }
 
-    return { beds, baths, hours: result.hours!, total: result.total };
+    // subtotal, not total — the published rate ($50/hr) and this table are
+    // pre-tax; the disclaimer below calls out that tax isn't included.
+    return { beds, baths, hours: result.hours!, price: result.subtotal };
 }
 
 const TABLES = [
     {
         title: "Standard Cleaning",
         badge: "MOST POPULAR",
+        badgeTone: "bg-mint/15 text-pine",
         rows: ROOM_COMBOS.map(({ beds, baths }) => priceRow("standard", beds, baths)),
     },
     {
         title: "Deep Cleaning",
         badge: "EXTRA THOROUGH",
+        badgeTone: "bg-lemon/25 text-ink",
         rows: ROOM_COMBOS.map(({ beds, baths }) => priceRow("deep", beds, baths)),
     },
 ];
@@ -45,43 +49,56 @@ const TABLES = [
 export function Pricing() {
     return (
         <section id="pricing" className="scroll-mt-28">
-            <div className="mx-auto max-w-6xl px-gutter py-16 md:py-24">
-                <div className="flex flex-col items-center gap-4 text-center">
-                    <Eyebrow>SIMPLE PRICING</Eyebrow>
-                    <h2 className="max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
-                        Priced by your space, not surprises
-                    </h2>
+            <div className="px-gutter py-16 md:py-24">
+                {/* Header row */}
+                <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+                    <div className="space-y-4 text-left ">
+                        <Eyebrow>SIMPLE PRICING</Eyebrow>
+                        <h2 className="max-w-132.25 font-display text-4xl font-extrabold leading-tight text-ink md:text-5xl">
+                            Priced by your space, not surprises
+                        </h2>
+                        <span className="inline-flex items-center rounded-pill bg-sea-mist/60 px-4 py-2 font-mono text-xs font-bold text-pine">
+                            Standard rate — ${HOURLY_RATE}/hour
+                        </span>
+                    </div>
 
-                    <span className="rounded-pill bg-sea-mist/60 px-4 py-2 font-mono text-xs font-bold text-pine">
-                        Standard rate — ${HOURLY_RATE}/hour
-                    </span>
+                    <p className="max-w-sm font-mono text-lg leading-relaxed text-ink-soft md:self-end md:text-right">
+                        Residential jobs are priced by beds and baths. Add roughly 30 minutes
+                        for each additional bed and bath. Deep cleans take longer for a more
+                        thorough result.
+                    </p>
                 </div>
 
-                <div className="mt-12 grid gap-6 md:grid-cols-2">
-                    {TABLES.map(({ title, badge, rows }) => (
+                {/* Pricing cards */}
+                <div className="mt-12 flex flex-col items-center gap-5.25 md:flex-row md:justify-center">
+                    {TABLES.map(({ title, badge, badgeTone, rows }) => (
                         <div
                             key={title}
-                            className="rounded-card border border-line bg-card p-6"
+                            className="rounded-[28px] bg-card p-6 h-[245px] w-[663px] shadow-lg shadow-pine/10"
                         >
                             <div className="mb-5 flex items-center justify-between">
-                                <h3 className="text-lg font-semibold text-ink">{title}</h3>
-                                <span className="rounded-pill bg-mint/15 px-3 py-1 font-mono text-xs uppercase tracking-wide text-pine">
+                                <h3 className="text-lg font-semibold text-pine">{title}</h3>
+                                <span
+                                    className={`rounded-pill px-3 py-1.5  font-mono font-bold text-xs uppercase tracking-wide ${badgeTone}`}
+                                >
                                     {badge}
                                 </span>
                             </div>
 
-                            <ul className="space-y-3">
+                            <ul className="space-y-4">
                                 {rows.map((row) => (
                                     <li
                                         key={`${row.beds}-${row.baths}`}
-                                        className="flex items-center justify-between border-b border-dashed border-line pb-3 last:border-0 last:pb-0"
+                                        className="grid grid-cols-3 items-center border-b border-dashed border-line pb-5 last:border-0 last:pb-0"
                                     >
                                         <span className="text-sm text-ink">
-                                            {row.beds}bed · {row.baths}bath
+                                            {row.beds} bed · {row.baths} bath
                                         </span>
-                                        <span className="text-sm text-ink-soft">{row.hours}hrs</span>
-                                        <span className="text-sm font-semibold text-ink">
-                                            ${row.total}
+                                        <span className="text-center text-sm text-ink-soft">
+                                            {row.hours} hrs
+                                        </span>
+                                        <span className="text-right text-sm font-bold text-pine">
+                                            ${row.price}
                                         </span>
                                     </li>
                                 ))}
@@ -90,6 +107,7 @@ export function Pricing() {
                     ))}
                 </div>
 
+                {/* Disclaimer */}
                 <p className="mt-6 text-center text-sm text-ink-soft">
                     Carpet is ${CARPET_PER_ROOM}/room. Commercial is quoted separately.
                 </p>
