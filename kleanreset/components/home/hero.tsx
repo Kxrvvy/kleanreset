@@ -22,7 +22,7 @@ const FOOTER_TRUST = ["Same-day quotes", "Fully insured"];
 export function Hero() {
     return (
         <section >
-            <div className="bg-paper mx-auto mt-auto mb-auto grid min-h-130 max-w-347.5 items-center gap-8 px-gutter md:grid-cols-[600px_499px] md:gap-45.25 md:min-h-165.5 md:pt-20 md:pb-2">
+            <div className="bg-paper mx-auto mt-auto mb-auto grid min-h-130 max-w-347.5 items-center gap-8 px-gutter pt-28 md:grid-cols-[600px_499px] md:gap-45.25 md:min-h-166">
                 {/* Left column */}
                 <div className="space-y-7">
                     <Eyebrow>RESIDENTIAL & COMMERCIAL CLEANING</Eyebrow>

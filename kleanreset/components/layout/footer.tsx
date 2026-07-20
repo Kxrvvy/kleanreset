@@ -31,16 +31,21 @@ export function Footer() {
   return (
     <footer className="mt-auto bg-pine-deep text-celadon">
       <div className="mx-auto max-w-6xl px-6 pb-6 pt-15">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           {/* Brand column */}
-          <div className="space-y-4">
-            <Image
-              src="/logo-light.svg"
-              alt="Kleanreset"
-              width={150}
-              height={34}
-            />
-            <p className="text-sm leading-relaxed text-celadon/80">
+          <div className="space-y-2 md:max-w-64">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/kleanreset.png"
+                alt="Kleanreset"
+                width={88}
+                height={88}
+              />
+              <span className="font-display text-lg font-bold text-white">
+                Kleanreset
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed text-sea-mist">
               Detailed, dependable cleaning for homes, Airbnbs, dental clinics,
               and offices. Reliable. Detailed. Consistent.
             </p>
@@ -56,7 +61,7 @@ export function Footer() {
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-celadon/80 transition-colors hover:text-white"
+                    className="text-sea-mist transition-colors hover:text-mint-bright"
                   >
                     {service}
                   </Link>
@@ -66,16 +71,16 @@ export function Footer() {
           </div>
 
           {/* Contact column */}
-          <div>
+          <div className="md:max-w-64">
             <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-mint">
               Get in Touch
             </h3>
-            <ul className="space-y-2 text-sm text-celadon/80">
+            <ul className="space-y-2 text-sm text-sea-mist">
               <li>{CONTACT.phones}</li>
               <li>
                 <a
                   href={`mailto:${CONTACT.email}`}
-                  className="underline transition-colors hover:text-white"
+                  className="underline transition-colors hover:text-mint-bright"
                 >
                   {CONTACT.email}
                 </a>

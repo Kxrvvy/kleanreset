@@ -15,7 +15,6 @@ export default function HomePage() {
             <Why />
             <How />
             <CTA />
-            <Footer />
         </>
     )
 }

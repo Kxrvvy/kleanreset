@@ -4,25 +4,39 @@
 import Link from "next/link";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
 
 
 const LINKS = [
     {href: "/", label: "Home"},
-    {href: "services", label: "Services"},
+    {href: "/services", label: "Services"},
     {href: "/about", label: "About"},
 ] as const;
 
 export function Nav () {
     const pathname = usePathname();
-    const [isOpen, setIsOpen] =useState(false); 
+    const [isOpen, setIsOpen] =useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const onBookingPage = pathname === "/booking";
 
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <header className="sticky top-0 z-50 px-4 pt-4">
-            <nav className="mx-auto flex max-w-6xl justify-between gap-4 rounded-pill border border-line bg-card/90 px-5 py-3 backdrop-blur-sm">
+        <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+            <nav
+                className={`mx-auto flex max-w-6xl justify-between gap-4 rounded-pill px-5 py-3 transition-all duration-300 ${
+                    scrolled
+                        ? "border border-line bg-card/70 shadow-sm backdrop-blur-md"
+                        : "border border-transparent bg-transparent"
+                }`}
+            >
                 <Link href="/" className="flex items-center gap-2 shrink-0">
                     <Image
                         src="/kleanreset.png"
@@ -34,14 +48,14 @@ export function Nav () {
                 </Link>
 
                 {/* Desktop links */}
-                <ul className="hidden items-center gap-8">
+                <ul className="hidden items-center gap-8 text-ink md:flex font-bold">
                     {LINKS.map((link) => {
                         const isActive = pathname === link.href;
                         return(
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className={`transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"}`}
+                                    className={`transition-colors hover:text-pine ${isActive ? "text-mint" : "text-ink"}`}
                                 >
                                     {link.label}
                                 </Link>
@@ -94,7 +108,7 @@ export function Nav () {
             {isOpen && (
                 <div
                     id="mobile-nav-panel"
-                    className="mx-auto mt-2 flex max-w-6xl flex-col gap-1 rounded-card border border-line bg-card p-4 md:hidden"
+                    className="mx-auto mt-2 flex max-w-6xl flex-col gap-1 rounded-card border border-line bg-card p-4 shadow-lg md:hidden"
                 >
                     {LINKS.map((link) => {
                         const isActive = pathname === link.href;
