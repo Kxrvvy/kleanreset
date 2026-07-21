@@ -1,26 +1,25 @@
 import { Eyebrow } from "../ui/eyebrow";
 import { Check } from "lucide-react";
 
-
 const TRUST = [
     "Locally owned & operated",
     "Background-checked, trained cleaners",
     "Eco-friendly products by default",
 ];
 
-
 export function HomeIntro() {
     return <section>
-        <div className="bg-paper mx-auto grid max-w-359.75 items-center gap-8 px-gutter py-16 md:grid-cols-[555px_1fr] md:gap-34.75 md:py-24">
+        {/* base: single column, fluid padding. md+: original Figma layout. */}
+        <div className="bg-paper mx-auto grid max-w-[1280px] items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-[minmax(0,560px)_minmax(0,1fr)] md:gap-10 md:px-8 md:py-24 lg:gap-14 lg:px-10 xl:gap-16 xl:px-12">
             {/* Left Column */}
             <div className="space-y-6">
                 <Eyebrow>ABOUT THE TEAM</Eyebrow>
 
-                <h2 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
+                <h2 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl md:text-[40px]">
                     The people behind the spotless
                 </h2>
 
-                <div className="space-y-4 text-[17px] text-ink-soft">
+                <div className="space-y-4 text-base text-ink-soft sm:text-[17px]">
                     <p>
                         Kleanreset is a small, tight-knit crew that treats every home and
                         workplace like our own. We hire for care, train for consistency, and
@@ -44,19 +43,11 @@ export function HomeIntro() {
 
             {/* Right Column */}
             <div className="relative">
-                {/*Back Card */}
-                <div
-                    aria-hidden
-                    className="absolute -top-6 -left-5 h-21.75 w-63.25 rounded-card bg-line"
-                />
-                <div
-                    aria-hidden
-                    className="absolute -top-2.5 -left-1 h-18 w-16 rounded-card bg-sea-mist"
-                />
+                <div aria-hidden className="absolute -top-6 -left-5 h-21.75 w-63.25 rounded-card bg-line" />
+                <div aria-hidden className="absolute -top-2.5 -left-1 h-18 w-16 rounded-card bg-sea-mist" />
 
-                {/* Main Card */}
-                <div className="relative rounded-card bg-pine-deep p-8 shadow-xl shadow-pine/20">
-                    <p className="font-display text-2xl leading-snug text-white">
+                <div className="relative rounded-card bg-pine-deep p-6 shadow-xl shadow-pine/20 sm:p-8">
+                    <p className="font-display text-xl leading-snug text-white sm:text-2xl">
                         &ldquo;We don&apos;t consider a job done until the last corner passes
                         our own checklist.&rdquo;
                     </p>

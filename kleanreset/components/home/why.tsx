@@ -25,7 +25,7 @@ const WHY = [
 export function Why() {
     return (
         <section>
-            <div className="flex flex-col items-center justify-center gap-6 bg-pine px-gutter py-16 md:py-15">
+            <div className="flex flex-col items-center justify-center gap-6 bg-pine px-4 py-16 sm:px-6 md:px-8 md:py-15 lg:px-10 xl:px-12">
                 <Eyebrow tone="light">WHY KLEANRESET</Eyebrow>
 
                 <h1 className="font-display text-4xl font-extrabold leading-tight text-white text-center md:text-[40px]">
@@ -34,11 +34,11 @@ export function Why() {
                     </span>
                 </h1>
 
-                <p className="text-center text-celadon text-[15px]">
-                    The little things are the whole job. Here&apos;s what you can count on every time we <br /> show up.
+                <p className="max-w-2xl text-center text-[15px] text-celadon">
+                    The little things are the whole job. Here&apos;s what you can count on every time we show up.
                 </p>
 
-                <div className="grid w-full max-w-5xl gap-6 pt-6 md:grid-cols-3">
+                <div className="grid w-full max-w-6xl gap-6 pt-6 lg:grid-cols-3">
                     {WHY.map(({ icon: Icon, title, description }) => (
                         <div
                             key={title}

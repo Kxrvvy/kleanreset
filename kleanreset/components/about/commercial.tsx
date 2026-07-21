@@ -32,7 +32,7 @@ const SERVICES = [
 export function Commercial() {
     return (
         <section>
-            <div className="flex flex-col items-center justify-center gap-6 bg-paper px-gutter py-16 md:py-15 md:min-h-130">
+            <div className="flex flex-col items-center justify-center gap-6 bg-paper px-6 py-16 sm:px-8 md:min-h-130 md:px-gutter md:py-15">
                 <div className="w-full max-w-6xl">
                     <Eyebrow>OUR SERVICES</Eyebrow>
                 </div>
@@ -48,7 +48,7 @@ export function Commercial() {
                     {SERVICES.map(({ icon: Icon, title, description }) => (
                         <div
                             key={title}
-                            className="flex h-50.25 w-70 flex-col gap-2 rounded-card border border-line bg-card p-6"
+                            className="flex w-full max-w-70 flex-col gap-2 rounded-card border border-line bg-card p-6 md:h-50.25"
                         >
                             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-sea-mist/60 text-pine">
                                 <Icon className="h-5 w-5" />

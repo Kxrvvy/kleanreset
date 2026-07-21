@@ -32,7 +32,7 @@ const SERVICES = [
 export function Services() {
     return (
         <section>
-            <div className="flex flex-col items-center justify-center gap-6 bg-sea-mist/20 px-gutter py-16 md:py-15">
+            <div className="flex flex-col items-center justify-center gap-6 bg-sea-mist/20 px-4 py-16 sm:px-6 md:px-8 md:py-15 lg:px-10 xl:px-12">
                 <Eyebrow>OUR SERVICES</Eyebrow>
 
                 <div className="space-y-6">
@@ -57,11 +57,11 @@ export function Services() {
                     </p>
                 </div>
 
-                <div className="grid w-full max-w-6xl justify-items-center gap-50 pt-6 sm:grid-cols-2 md:grid-cols-4">
+                <div className="grid w-full max-w-6xl justify-items-center gap-6 pt-6 sm:grid-cols-2 xl:grid-cols-4">
                     {SERVICES.map(({ icon: Icon, title, description }) => (
                         <div
                             key={title}
-                            className="flex h-57.5 w-79.75 flex-col gap-4 rounded-card border border-line bg-card p-6"
+                            className="flex w-full max-w-[320px] flex-col gap-4 rounded-card border border-line bg-card p-6 sm:max-w-none"
                         >
                             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-sea-mist/60 text-pine">
                                 <Icon className="h-5 w-5" />

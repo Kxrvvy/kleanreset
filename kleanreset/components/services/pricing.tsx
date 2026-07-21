@@ -49,7 +49,7 @@ const TABLES = [
 export function Pricing() {
     return (
         <section id="pricing" className="scroll-mt-28">
-            <div className="px-gutter py-16 md:py-24">
+            <div className="px-6 py-16 sm:px-8 md:px-gutter md:py-24">
                 {/* Header row */}
                 <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
                     <div className="space-y-4 text-left ">
@@ -74,7 +74,7 @@ export function Pricing() {
                     {TABLES.map(({ title, badge, badgeTone, rows }) => (
                         <div
                             key={title}
-                            className="rounded-[28px] bg-card p-6 h-[245px] w-[663px] shadow-lg shadow-pine/10"
+                            className="w-full max-w-[663px] rounded-[28px] bg-card p-6 shadow-lg shadow-pine/10 md:h-[245px]"
                         >
                             <div className="mb-5 flex items-center justify-between">
                                 <h3 className="text-lg font-semibold text-pine">{title}</h3>
