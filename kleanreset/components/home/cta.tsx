@@ -3,8 +3,8 @@ import { Button } from "../ui/button";
 export function CTA() {
     return (
         <section>
-            <div className="bg-grayish py-16 md:py-10">
-                <div className="mx-auto flex h-75 w-287.5 flex-col items-center justify-center gap-4 rounded-[40px] bg-pine-deep px-36.25 text-center">
+            <div className="bg-grayish px-4 py-16 sm:px-6 md:px-8 md:py-10 lg:px-10 xl:px-12">
+                <div className="mx-auto flex w-full max-w-[980px] flex-col items-center justify-center gap-4 rounded-[32px] bg-pine-deep px-6 py-12 text-center sm:px-8 md:px-12 lg:px-16">
                     <h2 className="font-display text-3xl font-extrabold text-white md:text-4xl">
                         Ready for a spotless space?
                     </h2>

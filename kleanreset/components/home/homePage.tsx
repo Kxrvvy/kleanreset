@@ -1,9 +1,9 @@
-import {Hero} from "@/components/home/hero";
-import {HomeIntro} from "@/components/home/homeIntro";
-import {Services} from "@/components/home/services";
-import {Why} from "@/components/home/why";
-import {How} from "@/components/home/how";
-import {CTA} from "@/components/home/cta";
+import { Hero } from "@/components/home/hero";
+import { HomeIntro } from "@/components/home/homeIntro";
+import { Services } from "@/components/home/services";
+import { Why } from "@/components/home/why";
+import { How } from "@/components/home/how";
+import { CTA } from "@/components/home/cta";
 import { TalkToUs } from "@/components/ui/TalkToUs";
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
             <Services />
             <Why />
             <How />
-            <section className="px-gutter py-12 md:pt-14 md:pb-10 bg-paper">
+            <section className="bg-paper px-4 py-12 sm:px-6 md:px-8 md:pt-14 md:pb-10 lg:px-10 xl:px-12">
                 <TalkToUs />
             </section>
             <CTA />

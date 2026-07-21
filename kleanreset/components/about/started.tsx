@@ -4,12 +4,13 @@ export function Started() {
     return (
         <section>
             <div className="bg-linear-to-b from-grayish to-sea-mist">
-                <div className="mx-auto grid max-w-350 grid-cols-[3fr_3fr] gap-37.5 px-20 pt-15.75 pb-16 md:pb-24">
+                {/* base: single column, fluid padding. md+: two columns + Figma spacing. */}
+                <div className="mx-auto grid max-w-350 grid-cols-1 gap-12 px-6 pt-16 pb-16 sm:px-8 md:grid-cols-[3fr_3fr] md:gap-37.5 md:px-20 md:pt-15.75 md:pb-24">
                     {/* Left column */}
                     <div className="space-y-4">
                         <Eyebrow>HOW WE STARTED</Eyebrow>
 
-                        <h2 className="font-display text-4xl font-extrabold leading-tight text-ink">
+                        <h2 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                             A small crew with high standards
                         </h2>
 
@@ -31,11 +32,11 @@ export function Started() {
                     <div className="space-y-4">
                         <Eyebrow>WHAT WE BELIEVE</Eyebrow>
 
-                        <h2 className="font-display text-4xl font-extrabold leading-tight text-ink">
+                        <h2 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                             Clean should feel effortless — for you
                         </h2>
 
-                        <blockquote className="border-l-2 border-mint pl-4 font-semibold leading-relaxed text-ink text-[20px]">
+                        <blockquote className="border-l-2 border-mint pl-4 text-lg font-semibold leading-relaxed text-ink sm:text-[20px]">
                             The best cleaning is the kind you never have to think about, because
                             someone already thought of everything.
                         </blockquote>
