@@ -28,7 +28,7 @@ export type ExtraId =
   | "high_dusting";
 
 export type AccessMethod =
-  | "someone_home"
+  | "someone_there"
   | "key_under_mat"
   | "smartlock"
   | "lockbox"

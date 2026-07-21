@@ -4,7 +4,7 @@ import {Services} from "@/components/home/services";
 import {Why} from "@/components/home/why";
 import {How} from "@/components/home/how";
 import {CTA} from "@/components/home/cta";
-import { Footer } from "../layout/footer";
+import { TalkToUs } from "@/components/ui/TalkToUs";
 
 export default function HomePage() {
     return (
@@ -14,6 +14,9 @@ export default function HomePage() {
             <Services />
             <Why />
             <How />
+            <section className="px-gutter py-12 md:pt-14 md:pb-10 bg-paper">
+                <TalkToUs />
+            </section>
             <CTA />
         </>
     )
