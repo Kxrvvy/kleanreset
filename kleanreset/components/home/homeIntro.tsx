@@ -10,7 +10,7 @@ const TRUST = [
 export function HomeIntro() {
     return <section>
         {/* base: single column, fluid padding. md+: original Figma layout. */}
-        <div className="bg-paper mx-auto grid max-w-[1280px] items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-[minmax(0,560px)_minmax(0,1fr)] md:gap-10 md:px-8 md:py-24 lg:gap-14 lg:px-10 xl:gap-16 xl:px-12">
+        <div className="bg-paper mx-auto grid max-w-[1280px] items-center gap-8 px-4 py-16 sm:px-6 md:px-8 md:py-20 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-12 lg:px-10 xl:gap-16 xl:px-12">
             {/* Left Column */}
             <div className="space-y-6">
                 <Eyebrow>ABOUT THE TEAM</Eyebrow>
@@ -43,7 +43,7 @@ export function HomeIntro() {
 
             {/* Right Column */}
             <div className="relative">
-                <div aria-hidden className="absolute -top-6 -left-5 h-21.75 w-63.25 rounded-card bg-line" />
+                <div aria-hidden className="absolute -top-6 -left-3 h-21.75 w-63.25 rounded-card bg-line" />
                 <div aria-hidden className="absolute -top-2.5 -left-1 h-18 w-16 rounded-card bg-sea-mist" />
 
                 <div className="relative rounded-card bg-pine-deep p-6 shadow-xl shadow-pine/20 sm:p-8">

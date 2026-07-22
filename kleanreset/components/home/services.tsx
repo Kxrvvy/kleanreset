@@ -32,32 +32,20 @@ const SERVICES = [
 export function Services() {
     return (
         <section>
-            <div className="flex flex-col items-center justify-center gap-6 bg-sea-mist/20 px-4 py-16 sm:px-6 md:px-8 md:py-15 lg:px-10 xl:px-12">
+            <div className="flex flex-col items-center justify-center gap-6 bg-sea-mist/20 px-4 py-16 sm:px-6 md:px-8 md:py-20 lg:px-10 xl:px-12">
                 <Eyebrow>OUR SERVICES</Eyebrow>
 
-                <div className="space-y-6">
-                    <h1 className="font-display text-4xl font-extrabold leading-tight text-ink text-center md:text-[40px]">
-                        <span>
-                            One team for every kind of
-                        </span>
-                        <br />
-                        <span>
-                            clean
-                        </span>
+                <div className="space-y-5">
+                    <h1 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] font-extrabold leading-tight text-ink text-center">
+                        One team for every kind of clean
                     </h1>
 
-                    <p className="text-center text-ink-soft">
-                        <span>
-                            From weekly home upkeep to clinical-grade office sanitizing — pick what you
-                        </span>
-                        <br />
-                        <span>
-                            need, and we handle the rest.
-                        </span>
+                    <p className="mx-auto max-w-2xl text-center text-ink-soft">
+                        From weekly home upkeep to clinical-grade office sanitizing — pick what you need, and we handle the rest.
                     </p>
                 </div>
 
-                <div className="grid w-full max-w-6xl justify-items-center gap-6 pt-6 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid w-full max-w-6xl justify-items-center gap-6 pt-6 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4">
                     {SERVICES.map(({ icon: Icon, title, description }) => (
                         <div
                             key={title}

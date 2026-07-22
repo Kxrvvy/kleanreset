@@ -38,11 +38,11 @@ export function Why() {
                     The little things are the whole job. Here&apos;s what you can count on every time we show up.
                 </p>
 
-                <div className="grid w-full max-w-6xl gap-6 pt-6 lg:grid-cols-3">
+                <div className="grid w-full max-w-6xl gap-3 pt-6 md:grid-cols-3 md:justify-items-center lg:grid-cols-3">
                     {WHY.map(({ icon: Icon, title, description }) => (
                         <div
                             key={title}
-                            className="flex flex-col gap-4 rounded-card bg-pine-deep p-6"
+                            className="flex flex-col gap-4 rounded-card bg-pine-deep p-6 md:max-w-100"
                         >
                             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-pine-deep">
                                 <Icon className="h-5 w-5" />

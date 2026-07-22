@@ -99,7 +99,7 @@ export function Footer() {
               href="/booking"
               className="inline-flex items-center justify-center rounded-pill
                          bg-mint px-6 py-2.5 text-sm font-semibold text-pine-deep
-                         transition-colors hover:bg-mint-bright"
+                         transition-colors hover:bg-mint-bright md:px-4 md:py-2 md:text-[0.8rem] md:whitespace-nowrap"
             >
               Book Now
             </Link>

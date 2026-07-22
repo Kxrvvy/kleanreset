@@ -42,8 +42,8 @@ export function Nav () {
                     <Image
                         src="/kleanreset.png"
                         alt="Kleanreset"
-                        width={32}
-                        height={32}
+                        width={46}
+                        height={46}
                     />
                     <span className="font-display text-lg font-bold">Kleanreset</span>
                 </Link>

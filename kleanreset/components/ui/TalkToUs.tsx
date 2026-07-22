@@ -23,24 +23,27 @@ export function TalkToUs() {
         </p>
       </div>
 
-      <div className="flex flex-col items-center gap-3 sm:flex-row">
-        <a
-          href={`tel:+1${CONTACT.phone.replace(/\s/g, "")}`}
-          className="flex items-center gap-2 font-semibold text-ink hover:text-pine"
-        >
-          <Phone className="h-4 w-4 text-mint" />
-          {CONTACT.phone}
-        </a>
-        <a
-          href={`mailto:${CONTACT.email}`}
-          className="flex items-center gap-2 font-semibold text-ink hover:text-pine"
-        >
-          <Mail className="h-4 w-4 text-mint" />
-          {CONTACT.email}
-        </a>
+      <div className="flex flex-col items-center justify-center gap-6 md:items-start lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8 lg:text-[17px] min-[1230px]:flex-row min-[1230px]:items-center min-[1230px]:justify-center xl:flex-row xl:items-center">
+        <div className="flex flex-col items-center justify-center gap-4 pt-1.5 md:items-start lg:items-start lg:justify-center min-[1230px]:flex-row min-[1230px]:items-center min-[1230px]:justify-center">
+          <a
+            href={`tel:+1${CONTACT.phone.replace(/\s/g, "")}`}
+            className="flex items-center gap-2 font-semibold text-ink hover:text-pine"
+          >
+            <Phone className="h-4 w-4 text-mint" />
+            {CONTACT.phone}
+          </a>
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="flex items-center gap-2 font-semibold text-ink hover:text-pine"
+          >
+            <Mail className="h-4 w-4 text-mint" />
+            {CONTACT.email}
+          </a>
+        </div>
+
         <Link
           href="/contact"
-          className="rounded-pill bg-pine px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-pine-deep"
+          className="mx-auto rounded-pill bg-pine px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-pine-deep md:mx-12 lg:mx-0 xl:ml-4"
         >
           Contact us
         </Link>
