@@ -26,7 +26,7 @@ const STATS = [
 export function Expect() {
     return (
         <section>
-            <div className="flex flex-col items-center justify-center gap-6 bg-pine-deep px-gutter py-16 text-center md:py-20">
+            <div className="flex flex-col items-center justify-center gap-6 bg-pine-deep px-4 py-16 text-center sm:px-6 md:px-8 md:py-20 lg:px-10 xl:px-12">
                 <Eyebrow tone="light">WHAT YOU EXPECT</Eyebrow>
 
                 <h2 className="max-w-xl font-display text-4xl font-extrabold leading-tight text-white md:text-[40px]">
@@ -37,7 +37,7 @@ export function Expect() {
                     No fine print, just the standards we hold ourselves to on every single job.
                 </p>
 
-                <div className="grid w-full max-w-5xl gap-4 pt-6 sm:grid-cols-2 md:grid-cols-4">
+                <div className="grid w-full max-w-5xl gap-4 pt-6 sm:grid-cols-2 lg:grid-cols-4">
                     {STATS.map(({ value, label, description }) => (
                         <div
                             key={label}

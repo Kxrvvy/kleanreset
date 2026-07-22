@@ -67,7 +67,7 @@ export function Nav () {
 
                 {/* Desktop CTAs */}
                 <div className="hidden items-center gap-2 md:flex">
-                    <Button href="/booking?intent=quote" variant="outline" size="sm">
+                    <Button href="/contact" variant="outline" size="sm">
                         Get a Quote
                     </Button>
 

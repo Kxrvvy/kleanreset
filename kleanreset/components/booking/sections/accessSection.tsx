@@ -31,16 +31,15 @@ export function AccessSection() {
               type="button"
               key={id}
               onClick={() => setValue("access.method", id)}
-              className={`rounded-pill border px-4 py-2 text-sm transition-colors ${
-                active ? "border-pine bg-sea-mist/40 text-pine" : "border-line bg-card text-ink-soft hover:border-pine/40"
-              }`}
+              className={`rounded-pill border px-4 py-2 text-sm transition-colors ${active ? "border-pine bg-sea-mist/40 text-pine" : "border-line bg-card text-ink-soft hover:border-pine/40"
+                }`}
             >
               {label}
             </button>
           );
         })}
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <Label>Parking information</Label>
           <textarea rows={2} className={fieldCls} placeholder="Driveway, street parking, garage code..." {...register("access.parkingInfo")} />
@@ -49,7 +48,7 @@ export function AccessSection() {
           <Label>Building instructions</Label>
           <textarea rows={2} className={fieldCls} placeholder="Buzzer, elevator, service entrance..." {...register("access.buildingInstructions")} />
         </div>
-        <div className="sm:col-span-2 sm:w-1/2">
+        <div className="lg:col-span-2 lg:w-1/2">
           <Label>Gate code (optional)</Label>
           <input className={fieldCls} placeholder="#1234" {...register("access.gateCode")} />
         </div>

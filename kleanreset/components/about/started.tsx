@@ -4,8 +4,7 @@ export function Started() {
     return (
         <section>
             <div className="bg-linear-to-b from-grayish to-sea-mist">
-                {/* base: single column, fluid padding. md+: two columns + Figma spacing. */}
-                <div className="mx-auto grid max-w-350 grid-cols-1 gap-12 px-6 pt-16 pb-16 sm:px-8 md:grid-cols-[3fr_3fr] md:gap-37.5 md:px-20 md:pt-15.75 md:pb-24">
+                <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 pt-16 pb-16 sm:px-6 md:grid-cols-2 md:gap-8 md:px-8 md:pt-20 md:pb-24 lg:px-10 xl:px-12">
                     {/* Left column */}
                     <div className="space-y-4">
                         <Eyebrow>HOW WE STARTED</Eyebrow>

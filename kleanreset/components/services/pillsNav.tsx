@@ -13,7 +13,7 @@ const PILLS = [
 export function PillsNav() {
     return (
         <nav aria-label="Jump to section">
-            <ul className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3 px-gutter pb-10">
+            <ul className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3 px-4 pb-10 sm:px-6 md:px-8 lg:px-10 xl:px-12">
                 {PILLS.map((pill) => (
                     <li key={pill.label}>
                         <a

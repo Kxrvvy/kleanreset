@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 export function CTA() {
     return (
         <section>
-            <div className="mx-auto max-w-6xl px-gutter py-16 md:py-24">
-                <div className="flex flex-col items-center gap-4 rounded-card bg-pine px-8 py-12 text-center">
+            <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
+                <div className="flex flex-col items-center gap-4 rounded-card bg-pine px-6 py-12 text-center sm:px-8">
                     <h2 className="font-display text-3xl font-extrabold text-white md:text-4xl">
                         Book the service you need
                     </h2>
