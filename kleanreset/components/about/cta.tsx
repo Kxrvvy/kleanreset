@@ -3,8 +3,8 @@ import { Button } from "../ui/button";
 export function CTA() {
     return (
         <section>
-            <div className="bg-grayish py-16 md:py-10">
-                <div className="mx-auto flex h-75 w-287.5 flex-col items-center justify-center gap-4 rounded-[40px] bg-pine-deep px-36.25 text-center">
+            <div className="bg-grayish px-4 py-16 sm:px-6 md:px-8 md:py-10 lg:px-10 xl:px-12">
+                <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-4 rounded-[40px] bg-pine-deep px-6 py-12 text-center sm:px-8 md:px-12">
                     <h2 className="font-display text-3xl font-extrabold text-white md:text-4xl">
                         Come see the difference
                     </h2>
@@ -18,7 +18,7 @@ export function CTA() {
                             Book Now →
                         </Button>
                         <Button
-                            href="/booking"
+                            href="/contact"
                             variant="outline"
                             className="border-white/40! bg-transparent! text-white! hover:bg-white/10!"
                         >

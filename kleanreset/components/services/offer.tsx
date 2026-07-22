@@ -91,31 +91,29 @@ const CARDS: Card[] = [
 export function Offer() {
     return (
         <section id="offer" className="scroll-mt-28">
-            <div className="px-gutter py-16 md:py-24 bg-linear-to-b from-grayish to-sea-mist">
+            <div className="bg-linear-to-b from-grayish to-sea-mist px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
                 <div className="flex flex-col items-start gap-4 text-left">
                     <Eyebrow>WHAT WE OFFER</Eyebrow>
-                    <h2 className="max-w-2xl font-display text-5xl font-extrabold leading-tight text-ink md:text-[40px]">
+                    <h2 className="max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
                         We provide services for you
                     </h2>
-                    <p>
+                    <p className="max-w-2xl text-sm text-ink-soft sm:text-base">
                         Six ways we keep your space spotless — every one backed by the same satisfaction guarantee.
                     </p>
                 </div>
 
-                <div className="mt-12 grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-12 grid justify-items-center gap-6 sm:grid-cols-2 xl:grid-cols-4">
                     {CARDS.map(({ icon: Icon, title, description, cta, href, highlight }) => (
                         <div
                             key={title}
-                            className={`flex h-57.5 w-84.75 flex-col gap-4 rounded-card border p-6 ${
-                                highlight
+                            className={`flex min-h-[240px] w-full max-w-[360px] flex-col gap-4 rounded-card border p-6 sm:max-w-none xl:max-w-none ${highlight
                                     ? "border-pine bg-pine text-white"
                                     : "border-line bg-card text-ink"
-                            }`}
+                                }`}
                         >
                             <span
-                                className={`flex h-10 w-10 items-center justify-center rounded-lg ${
-                                    highlight ? "bg-white/15 text-white" : "bg-sea-mist/60 text-pine"
-                                }`}
+                                className={`flex h-10 w-10 items-center justify-center rounded-lg ${highlight ? "bg-white/15 text-white" : "bg-sea-mist/60 text-pine"
+                                    }`}
                             >
                                 <Icon className="h-5 w-5" />
                             </span>
@@ -129,9 +127,8 @@ export function Offer() {
 
                             <a
                                 href={href}
-                                className={`text-sm font-semibold hover:underline ${
-                                    highlight ? "text-mint-bright" : "text-pine"
-                                }`}
+                                className={`text-sm font-semibold hover:underline ${highlight ? "text-mint-bright" : "text-pine"
+                                    }`}
                             >
                                 {cta} →
                             </a>

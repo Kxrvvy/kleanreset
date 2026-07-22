@@ -1,5 +1,4 @@
 import { Hero } from "@/components/services/hero";
-import { PillsNav } from "@/components/services/pillsNav";
 import { Offer } from "@/components/services/offer";
 import { DentalFeature } from "@/components/services/dentalFeature";
 import { Pricing } from "@/components/services/pricing";
@@ -15,7 +14,7 @@ export default function ServicePage() {
             <DentalFeature />
             <Pricing />
             <HowItWorks />
-            <section className="px-gutter py-12 md:pt-14 md:pb-10">
+            <section className="px-4 py-12 sm:px-6 md:px-8 md:pt-14 md:pb-10 lg:px-10 xl:px-12">
                 <TalkToUs />
             </section>
             <CTA />

@@ -6,7 +6,7 @@ import { SectionCard } from "@/components/booking/sectionCard";
 import { TextInput, SelectInput, ErrorText } from "@/components/booking/fields";
 
 const PROVINCES = [
-  "AB","BC","MB","NB","NL","NS","NT","NU","ON","PE","QC","SK","YT",
+  "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT",
 ].map((p) => ({ value: p, label: p }));
 
 export function AddressSection() {
@@ -18,7 +18,7 @@ export function AddressSection() {
           <TextInput label="Street address" placeholder="123 Main St" {...register("address.street")} />
           <ErrorText error={errors.address?.street} />
         </div>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-3">
           <div>
             <TextInput label="City" placeholder="Edmonton" {...register("address.city")} />
             <ErrorText error={errors.address?.city} />

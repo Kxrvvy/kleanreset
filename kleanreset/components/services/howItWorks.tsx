@@ -8,45 +8,54 @@ const TABS = [
     {
         label: "Kitchen",
         items: [
-            "Wipe & disinfect countertops",
-            "Sanitize sink & fixtures",
-            "Empty bins & replace liners",
-            "Stovetop & exterior of appliances cleaned",
-            "Cabinet fronts wiped down",
-            "Floors swept & mopped",
+            "Dust accessible surfaces",
+            "Wipe countertops",
+            "Clean sink and faucet",
+            "Clean stovetop",
+            "Wipe appliance exteriors (fridge, oven, etc.)",
+            "Vacuum carpets and rugs",
+            "Sweep and mop floor",
+            "Empty garbage bin",
+            "Wipe high-touch areas (knobs, switches)",
+            "Light organizing and tidying",
         ],
     },
     {
         label: "Bathrooms",
         items: [
             "Toilet cleaned & disinfected, inside and out",
-            "Shower & tub scrubbed",
+            "Clean shower, tub & tiles",
             "Mirrors & fixtures polished",
             "Sink & counter wiped down",
-            "Floors mopped",
+            "Mop & disinfect floors",
             "Towels & bath mats straightened",
         ],
     },
     {
         label: "Bedrooms & Living",
         items: [
-            "Surfaces & furniture dusted",
+            "Dust all surfaces & shelves",
             "Floors vacuumed or mopped",
-            "Beds made / linens straightened",
+            "Make beds & fluff cushions",
             "Mirrors & glass cleaned",
             "Trash emptied",
-            "Baseboards & light switches wiped",
+            "Tidy & declutter surfaces",
+            "Wipe high-touch areas (knobs, switches)",
         ],
     },
     {
-        label: "Office & Clinic",
+        label: "Commercial",
         items: [
             "Desks & workstations wiped down",
             "High-touch surfaces disinfected (handles, switches)",
-            "Waiting & reception areas sanitized",
-            "Floors vacuumed & mopped",
+            "Work stations and common areas sanitized",
+            "Restrooms cleaned & sanitized",
+            "carpets and rugs vaccumed",
+            "kitchens/break rooms cleaned and sanitized",
+            "Lobby and reception area cleaning",
+            "interior windows and glass doors cleaned",
             "Trash removed & liners replaced",
-            "Restrooms cleaned & restocked",
+
         ],
     },
 ] as const;
@@ -54,12 +63,18 @@ const TABS = [
 export function HowItWorks() {
     const [active, setActive] = useState(0);
     const tab = TABS[active];
-    const left = tab.items.slice(0, 3);
-    const right = tab.items.slice(3);
+    const columns = tab.items.reduce(
+        (acc, item, index) => {
+            acc[index % 2].push(item);
+            return acc;
+        },
+        [[], []] as [string[], string[]],
+    );
+    const [left, right] = columns;
 
     return (
         <section id="checklist" className="scroll-mt-28">
-            <div className="px-[200px] py-16 md:py-24">
+            <div className="px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
                 <div className="max-w-xl space-y-4 text-left">
                     <Eyebrow>HOW IT WORKS</Eyebrow>
                     <h2 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
@@ -77,18 +92,17 @@ export function HowItWorks() {
                             key={t.label}
                             type="button"
                             onClick={() => setActive(i)}
-                            className={`rounded-pill px-5 py-2.5 font-mono text-xs font-bold transition-colors ${
-                                i === active
-                                    ? "bg-pine text-white"
-                                    : "border border-line bg-card text-ink hover:bg-sea-mist/40"
-                            }`}
+                            className={`rounded-pill px-5 py-2.5 font-mono text-xs font-bold transition-colors ${i === active
+                                ? "bg-pine text-white"
+                                : "border border-line bg-card text-ink hover:bg-sea-mist/40"
+                                }`}
                         >
                             {t.label}
                         </button>
                     ))}
                 </div>
 
-                <div className="mt-10 grid gap-x-16 gap-y-1 md:grid-cols-2">
+                <div className="mt-10 grid gap-x-6 gap-y-1 md:grid-cols-2 md:gap-x-10 lg:gap-x-16">
                     {[left, right].map((column, colIndex) => (
                         <ul key={colIndex} className="space-y-1">
                             {column.map((item) => (

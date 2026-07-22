@@ -20,7 +20,7 @@ export function SectionCard({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-28 rounded-card border border-line bg-card p-6 md:p-8">
+    <section id={id} className="scroll-mt-28 rounded-card border border-line bg-card p-5 sm:p-6 md:p-8">
       <div className="mb-6 flex items-start gap-3">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sea-mist/60 text-sm font-bold text-pine">
           {step}

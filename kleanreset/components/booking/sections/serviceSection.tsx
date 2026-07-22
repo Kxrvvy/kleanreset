@@ -85,23 +85,21 @@ export function ServiceSection() {
               type="button"
               key={id}
               onClick={() => choose(id)}
-              className={`block w-full rounded-card border p-5 text-left transition-colors ${
-                active ? "border-pine bg-sea-mist/20" : "border-line bg-card hover:border-pine/40"
-              }`}
+              className={`block w-full rounded-card border p-5 text-left transition-colors ${active ? "border-pine bg-sea-mist/20" : "border-line bg-card hover:border-pine/40"
+                }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h3 className="font-display font-bold text-ink">{meta.title}</h3>
                   <p className="mt-1 text-sm text-ink-soft">{meta.desc}</p>
                 </div>
-                <span className={`shrink-0 rounded-pill px-3 py-1 text-xs font-semibold ${
-                  active ? "bg-pine text-white" : "bg-field text-ink-soft"
-                }`}>
+                <span className={`shrink-0 rounded-pill px-3 py-1 text-xs font-semibold ${active ? "bg-pine text-white" : "bg-field text-ink-soft"
+                  }`}>
                   {active ? "SELECTED" : "SELECT"}
                 </span>
               </div>
               {active && (
-                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                <ul className="mt-4 grid gap-2 lg:grid-cols-2">
                   {meta.included.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-ink-soft">
                       <Check className="h-4 w-4 text-mint" strokeWidth={3} /> {item}

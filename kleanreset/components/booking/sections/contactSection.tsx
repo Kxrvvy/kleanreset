@@ -9,7 +9,7 @@ export function ContactSection() {
   const { register, formState: { errors } } = useFormContext<BookingFormValues>();
   return (
     <SectionCard step={2} id="section-contact" title="Client information" subtitle="How can we reach you?">
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2">
         <div>
           <TextInput label="Full name" placeholder="Jane Doe" {...register("contact.fullName")} />
           <ErrorText error={errors.contact?.fullName} />

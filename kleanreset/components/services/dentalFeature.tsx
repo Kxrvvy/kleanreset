@@ -14,23 +14,23 @@ const CHECKLIST = [
 export function DentalFeature() {
     return (
         <section id="dental" className="scroll-mt-28 bg-paper2">
-            <div className="mx-auto grid max-w-6xl items-center gap-12 px-gutter py-16 md:grid-cols-2 md:py-24">
+            <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:px-8 md:py-24 lg:px-10 xl:px-12">
                 {/* Left column */}
-                <div className="space-y-6">
+                <div className="space-y-6 text-center md:text-left">
                     <Eyebrow>WHAT WE STAND FOR</Eyebrow>
 
                     <h2 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
-                        Professional dental & Office cleaning
+                        Professional commercial & Office cleaning
                     </h2>
 
-                    <p className="max-w-md text-lg text-ink-soft">
-                        Clinics and offices run on trust — patients and staff need to see a
-                        space that&apos;s visibly, consistently clean. We follow an
-                        infection-control-minded checklist on every visit, so waiting rooms,
-                        reception, and treatment areas are ready before the day starts.
+                    <p className="mx-auto max-w-md text-base text-ink-soft sm:text-lg md:mx-0">
+                        commercial buildings and offices run on trust — employees, staff, and customers need to see a
+                        space that&apos;s visibly, consistently clean. We follow rigorous sanitation procedures
+                        on every visit, so waiting rooms, reception, workstations, and treatment areas are ready before 
+                        the day starts.
                     </p>
 
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap justify-center gap-4 md:justify-start">
                         <Button href="/booking?category=commercial&type=clinic">
                             Get a free quote
                         </Button>

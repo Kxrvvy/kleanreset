@@ -71,7 +71,7 @@ export function CategorySection() {
 
   return (
     <SectionCard step={1} id="section-category" title="Choose service category" subtitle="Select the type of space you need cleaned.">
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3">
         {CATEGORIES.map(({ value, icon: Icon, title, body }) => {
           const active = selected === value;
           return (
@@ -79,11 +79,10 @@ export function CategorySection() {
               type="button"
               key={value}
               onClick={() => choose(value)}
-              className={`relative rounded-card border p-5 text-left transition-colors ${
-                active
-                  ? "border-pine bg-sea-mist/30"
-                  : "border-line bg-card hover:border-pine/40"
-              }`}
+              className={`relative rounded-card border p-5 text-left transition-colors ${active
+                ? "border-pine bg-sea-mist/30"
+                : "border-line bg-card hover:border-pine/40"
+                }`}
             >
               {active && (
                 <span className="absolute right-4 top-4 flex h-5 w-5 items-center justify-center rounded-full bg-pine">

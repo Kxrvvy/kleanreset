@@ -86,7 +86,7 @@ export function BookingForm() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 pb-24 pt-12 md:grid-cols-[1fr_360px]">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-24 pt-10 sm:px-6 md:px-8 md:pt-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-10 xl:px-12">
           <div className="space-y-6">
             <CategorySection />
             <ContactSection />
@@ -100,7 +100,7 @@ export function BookingForm() {
             <ReviewSection estimate={currentEstimate} submitting={submitting} />
           </div>
 
-          <aside className="md:sticky md:top-28 md:self-start">
+          <aside className="lg:sticky lg:top-28 lg:self-start">
             <BookingSummary estimate={currentEstimate} />
           </aside>
         </div>
