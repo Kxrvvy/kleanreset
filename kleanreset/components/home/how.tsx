@@ -35,7 +35,7 @@ export function How() {
                     Book in two minutes, relax in one
                 </h2>
 
-                <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
                     {STEPS.map((step) => (
                         <div key={step.number} className="space-y-3">
                             <span className="font-mono text-sm font-bold text-ink">{step.number}</span>
