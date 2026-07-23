@@ -16,8 +16,8 @@ export function Eyebrow({ children, tone = "dark" }: Props) {
     <div className={`flex items-center gap-3 ${color}`}>
       {/* Decorative dash. bg-current inherits the text color above, so the
           dash always matches the label — one place to change, not two. */}
-      <span className="h-px w-6 bg-current" aria-hidden />
-      <span className="font-mono font-bold text-[14px] min-[320px]:text-[9px] min-[375px]:text-[11px] min-[425px]:text-[13px] uppercase tracking-widest">
+        {/*<span className="h-px w-6 bg-current" aria-hidden /> */}
+      <span className="font-quicksand font-bold text-[14px] min-[320px]:text-[9px] min-[375px]:text-[11px] min-[425px]:text-[13px] uppercase tracking-widest">
         {children}
       </span>
     </div>

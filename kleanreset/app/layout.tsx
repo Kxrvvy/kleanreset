@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Mono, Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import { Space_Mono, Bricolage_Grotesque, Hanken_Grotesk, Quicksand, Lora } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
@@ -22,6 +22,18 @@ const hankenGrotesk = Hanken_Grotesk({
     weight: ["400", "500", "700", "800"],
 });
 
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin"],
+    weight: ["400", "500", "700"],
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+    weight: ["400", "500", "700"],
+});
+
 
 export const metadata: Metadata = {
   title: "Kleanreset — Cleaning done with care",
@@ -36,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} ${bricolageGrotesque.variable} ${hankenGrotesk.variable} h-full scroll-smooth antialiased`}
+      className={`${spaceMono.variable} ${bricolageGrotesque.variable} ${hankenGrotesk.variable} ${quicksand.variable} ${lora.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
         <Nav />

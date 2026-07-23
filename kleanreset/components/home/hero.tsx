@@ -35,7 +35,7 @@ export function Hero() {
                         <span className="block text-pine">You enjoy the clean.</span>
                     </h1>
 
-                    <p className="max-w-xl text-base text-ink-soft sm:text-lg">
+                    <p className="max-w-xl text-base text-ink-soft sm:text-lg font-sans">
                         Reliable, detailed cleaning for Homes, Airbnbs, and offices — done right, every single time.
                     </p>
 
