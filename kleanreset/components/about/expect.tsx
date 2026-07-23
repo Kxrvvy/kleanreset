@@ -12,8 +12,8 @@ const STATS = [
         description: "Missed a spot? Tell us within a day.",
     },
     {
-        value: "4.9★",
-        label: "Client Rating",
+        value: "Locally",
+        label: "Owned & operated",
         description: "Consistently loved by locals.",
     },
     {

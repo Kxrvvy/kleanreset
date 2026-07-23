@@ -8,6 +8,8 @@
   --font-sans: var(--font-hanken-grotesk);          /* font-sans    → body */
   --font-display: var(--font-bricolage-grotesque);  /* font-display → headlines */
   --font-mono: var(--font-space-mono);              /* font-mono    → eyebrows */
+  --font-quicksand: var(--font-quicksand);
+  --font-lora: var(--font-lora);
 
   /* ── Greens ─────────────────────────────────────────── */
   --color-pine: #0E4D3C;         /* primary: buttons, selected borders, eyebrows */
