@@ -43,7 +43,8 @@ const DEFAULTS: Record<BookingFormValues["category"], Partial<BookingFormValues>
     property: {
       kind: "commercial", businessName: "", businessType: "office",
       buildingSize: 0, floors: 1, restrooms: 0, meetingRooms: 0,
-      frequency: "one_time", hasReception: false, hasKitchen: false, parkingAvailable: false,
+      frequency: "one_time", hasReception: false, hasKitchen: false,
+      hasBathroom: false, parkingAvailable: false,
     },
   },
   vacation_rental: {

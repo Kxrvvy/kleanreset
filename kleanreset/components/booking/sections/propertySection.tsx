@@ -76,10 +76,13 @@ export function PropertySection() {
           />
 
           <div className="lg:col-span-2">
-            <label className="mb-2 block text-sm font-semibold text-ink">Facility details</label>
+            <label className="mb-1 block text-sm font-semibold text-ink">Facility details</label>
+            <p className="mb-2 text-xs text-ink-soft">
+              Let us know which of these your space has, so we can price cleaning for every area accurately.
+            </p>
             <div className="grid gap-2 md:grid-cols-3">
               <ToggleRow
-                label="Reception area"
+                label="Reception"
                 checked={state?.kind === "commercial" ? state.hasReception : false}
                 onChange={(value) => setValue("property.hasReception", value)}
               />
@@ -89,9 +92,9 @@ export function PropertySection() {
                 onChange={(value) => setValue("property.hasKitchen", value)}
               />
               <ToggleRow
-                label="Parking available"
-                checked={state?.kind === "commercial" ? state.parkingAvailable : false}
-                onChange={(value) => setValue("property.parkingAvailable", value)}
+                label="Bathroom"
+                checked={state?.kind === "commercial" ? state.hasBathroom : false}
+                onChange={(value) => setValue("property.hasBathroom", value)}
               />
             </div>
           </div>
@@ -187,16 +190,29 @@ function ToggleRow({
     <button
       type="button"
       onClick={() => onChange(!checked)}
-      className="flex w-full items-center justify-between rounded-card border border-line bg-card px-4 py-3 text-left transition-colors hover:border-pine/40"
+      aria-pressed={checked}
+      className={`flex w-full items-center justify-between gap-2 rounded-card border px-3 py-2.5 text-left transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/40 ${
+        checked
+          ? "border-pine/30 bg-sea-mist/25"
+          : "border-line bg-card hover:border-pine/30 hover:bg-field/60"
+      }`}
     >
-      <span className="text-sm font-semibold text-ink">{label}</span>
       <span
-        className={`flex h-6 w-11 items-center rounded-full p-1 transition-colors ${checked ? "bg-pine" : "bg-line"
-          }`}
+        className={`truncate text-[12px] font-semibold transition-colors ${
+          checked ? "text-pine" : "text-ink-soft"
+        }`}
+      >
+        {label}
+      </span>
+      <span
+        className={`relative flex h-5 w-9 shrink-0 items-center rounded-full transition-colors duration-200 ${
+          checked ? "bg-mint" : "bg-line"
+        }`}
       >
         <span
-          className={`h-4 w-4 rounded-full bg-white shadow-sm transition-transform ${checked ? "translate-x-5" : "translate-x-0"
-            }`}
+          className={`absolute left-0.5 h-4 w-4 rounded-full bg-white shadow-sm transition-transform duration-200 ${
+            checked ? "translate-x-4" : "translate-x-0"
+          }`}
         />
       </span>
     </button>

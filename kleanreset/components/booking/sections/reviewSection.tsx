@@ -9,9 +9,11 @@ import { ErrorText } from "@/components/booking/fields";
 export function ReviewSection({
   estimate,
   submitting,
+  error,
 }: {
   estimate: Estimate;
   submitting: boolean;
+  error?: string | null;
 }) {
   const { register, formState: { errors } } = useFormContext<BookingFormValues>();
   const isQuote = estimate.mode === "quote";
@@ -48,6 +50,7 @@ export function ReviewSection({
       >
         {buttonLabel}
       </button>
+      {error && <p className="mt-3 text-center text-sm text-red-600">{error}</p>}
     </SectionCard>
   );
 }

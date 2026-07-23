@@ -24,6 +24,7 @@ import { ReviewSection } from "@/components/booking/sections/reviewSection";
 export function BookingForm() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const methods = useForm<BookingFormValues>({
     resolver: zodResolver(bookingSchema),
@@ -54,16 +55,22 @@ export function BookingForm() {
 
   const currentEstimate = estimate(category, service, property ?? null, extras ?? []);
 
-  // STUB — logs for now. Swap for a fetch to /api/booking later.
   async function onSubmit(data: BookingFormValues) {
     setSubmitting(true);
+    setError(null);
     try {
-      console.log("Booking submission:", {
-        ...data,
-        meta: { submittedAt: new Date().toISOString(), estimate: currentEstimate },
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
-      await new Promise((r) => setTimeout(r, 800));
+      const result = await res.json();
+      if (!res.ok || !result.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
       setDone(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -97,7 +104,7 @@ export function BookingForm() {
             <ScheduleSection />
             <AccessSection />
             <NotesSection />
-            <ReviewSection estimate={currentEstimate} submitting={submitting} />
+            <ReviewSection estimate={currentEstimate} submitting={submitting} error={error} />
           </div>
 
           <aside className="lg:sticky lg:top-28 lg:self-start">

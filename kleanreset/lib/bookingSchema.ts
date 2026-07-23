@@ -108,6 +108,7 @@ const commercialProperty = z.object({
     frequency: frequencySchema,
     hasReception: z.boolean(),
     hasKitchen: z.boolean(),
+    hasBathroom: z.boolean(),
     parkingAvailable: z.boolean(),
 });
 
@@ -164,3 +165,14 @@ export const bookingSchema = z.object({
 // zod can DERIVE the TypeScript type from the schema. This gives us a
 // form-input type that always matches the validation rules automatically.
 export type BookingFormValues = z.infer<typeof bookingSchema>;
+
+// ── Contact page submission ──────────────────────────────────
+// Reuses the same name/email/phone rules as a booking's contact section,
+// plus the free-text message. Mirrors types/booking.ts ContactPayload.
+
+export const contactPayloadSchema = contactSchema.extend({
+  message: z.string().min(1, "Please enter a message"),
+  submittedAt: z.string().min(1),
+});
+
+export type ContactFormValues = z.infer<typeof contactPayloadSchema>;
