@@ -2,8 +2,6 @@
 "use client";
 //
 // Client component: holds form state and handles submission.
-// For now submitContact() just logs — swap its body for the real
-// API call when the email pipeline exists.
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,15 +9,21 @@ import type { ContactPayload } from "@/types/booking";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-// STUB — replace body with a fetch to /api/contact once email is wired.
 async function submitContact(payload: ContactPayload): Promise<void> {
-  console.log("Contact submission:", payload);
-  // Simulate a network round-trip so the loading state is visible.
-  await new Promise((r) => setTimeout(r, 800));
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  const result = await res.json();
+  if (!res.ok || !result.ok) {
+    throw new Error(result.error || "Something went wrong. Please try again.");
+  }
 }
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -37,6 +41,7 @@ export function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
+    setErrorMessage(null);
     try {
       await submitContact({
         ...form,
@@ -44,7 +49,8 @@ export function ContactForm() {
       });
       setStatus("success");
       setForm({ fullName: "", email: "", phone: "", message: "" });
-    } catch {
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setStatus("error");
     }
   }
@@ -140,8 +146,7 @@ export function ContactForm() {
 
       {status === "error" && (
         <p className="mt-4 text-sm text-red-600">
-          Something went wrong sending your message. Please try again, or email
-          us directly.
+          {errorMessage ?? "Something went wrong sending your message. Please try again, or email us directly."}
         </p>
       )}
 

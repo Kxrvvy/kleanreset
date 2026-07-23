@@ -102,6 +102,7 @@ export type CommercialProperty = {
   frequency: CleaningFrequency;
   hasReception: boolean;
   hasKitchen: boolean;
+  hasBathroom: boolean;
   parkingAvailable: boolean;
 };
 
