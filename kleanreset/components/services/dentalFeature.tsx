@@ -43,7 +43,7 @@ export function DentalFeature() {
                 {/* Right column: checklist card */}
                 <div className="rounded-card border border-line bg-card p-6 shadow-xl shadow-pine/10">
                     <h3 className="mb-5 text-base font-semibold text-ink">
-                        What every clinic visit includes
+                        What every commercial visit includes
                     </h3>
 
                     <ul className="space-y-3">
