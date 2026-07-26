@@ -69,11 +69,11 @@ export function Nav () {
                         width={46}
                         height={46}
                     />
-                    <span className="font-display text-lg font-bold">Kleanreset</span>
+                    <span className="font-display text-lg font-bold text-forest">Kleanreset</span>
                 </Link>
 
                 {/* Desktop links */}
-                <ul className="hidden items-center gap-8 text-ink md:flex font-bold">
+                <ul className="hidden items-center gap-8 text-charcoal md:flex font-bold">
                     {LINKS.map((link) => {
                         const hasChildren = "children" in link && link.children;
                         const isActive = hasChildren
@@ -87,7 +87,7 @@ export function Nav () {
                                         type="button"
                                         onClick={() => setAboutOpen((open) => !open)}
                                         aria-expanded={aboutOpen}
-                                        className={`flex items-center gap-1 transition-colors hover:text-pine ${isActive ? "text-mint" : "text-ink"}`}
+                                        className={`flex items-center gap-1 transition-colors hover:text-teal ${isActive ? "text-teal" : "text-charcoal"}`}
                                     >
                                         {link.label}
                                         <ChevronDown
@@ -104,8 +104,8 @@ export function Nav () {
                                                         key={child.href}
                                                         href={child.href}
                                                         onClick={() => setAboutOpen(false)}
-                                                        className={`rounded-card px-3 py-2 text-sm font-medium hover:bg-sea-mist/40 hover:text-pine ${
-                                                            childActive ? "text-pine" : "text-ink-soft"
+                                                        className={`rounded-card px-3 py-2 text-sm font-medium hover:bg-sea-mist/40 hover:text-teal ${
+                                                            childActive ? "text-teal" : "text-charcoal"
                                                         }`}
                                                     >
                                                         {child.label}
@@ -122,7 +122,7 @@ export function Nav () {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className={`transition-colors hover:text-pine ${isActive ? "text-mint" : "text-ink"}`}
+                                    className={`transition-colors hover:text-teal ${isActive ? "text-teal" : "text-charcoal"}`}
                                 >
                                     {link.label}
                                 </Link>
@@ -133,12 +133,12 @@ export function Nav () {
 
                 {/* Desktop CTAs */}
                 <div className="hidden items-center gap-2 md:flex">
-                    <Button href="/contact" variant="outline" size="sm">
+                    <Button href="/contact" variant="forestOutline" size="sm">
                         Get a Quote
                     </Button>
 
                     {!onBookingPage && (
-                        <Button href="/booking" size="sm">
+                        <Button href="/booking" variant="forest" size="sm">
                             Book Now
                         </Button>
                     )}
@@ -193,8 +193,8 @@ export function Nav () {
                                         type="button"
                                         onClick={() => setAboutOpen((open) => !open)}
                                         aria-expanded={aboutOpen}
-                                        className={`flex w-full items-center justify-between rounded-card px-3 py-2.5 text-sm font-medium hover:bg-sea-mist/40 hover:text-pine ${
-                                            isActive ? "text-pine" : "text-ink-soft"
+                                        className={`flex w-full items-center justify-between rounded-card px-3 py-2.5 text-sm font-medium hover:bg-sea-mist/40 hover:text-teal ${
+                                            isActive ? "text-teal" : "text-charcoal"
                                         }`}
                                     >
                                         {link.label}
@@ -215,8 +215,8 @@ export function Nav () {
                                                             setAboutOpen(false);
                                                             setIsOpen(false);
                                                         }}
-                                                        className={`rounded-card px-3 py-2 text-sm font-medium hover:bg-sea-mist/40 hover:text-pine ${
-                                                            childActive ? "text-pine" : "text-ink-soft"
+                                                        className={`rounded-card px-3 py-2 text-sm font-medium hover:bg-sea-mist/40 hover:text-teal ${
+                                                            childActive ? "text-teal" : "text-charcoal"
                                                         }`}
                                                     >
                                                         {child.label}
@@ -234,8 +234,8 @@ export function Nav () {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className={`rounded-card px-3 py-2.5 text-sm font-medium hover:bg-sea-mist/40 hover:text-pine ${
-                                    isActive ? "text-pine" : "text-ink-soft"
+                                className={`rounded-card px-3 py-2.5 text-sm font-medium hover:bg-sea-mist/40 hover:text-teal ${
+                                    isActive ? "text-teal" : "text-charcoal"
                                 }`}
                             >
                                 {link.label}
@@ -246,7 +246,7 @@ export function Nav () {
                     <div className="mt-2 flex flex-col gap-2 border-t border-line pt-3">
                         <Button
                             href="/booking?intent=quote"
-                            variant="outline"
+                            variant="forestOutline"
                             size="sm"
                             className="w-full"
                             onClick={() => setIsOpen(false)}
@@ -257,6 +257,7 @@ export function Nav () {
                         {!onBookingPage && (
                             <Button
                                 href="/booking"
+                                variant="forest"
                                 size="sm"
                                 className="w-full"
                                 onClick={() => setIsOpen(false)}

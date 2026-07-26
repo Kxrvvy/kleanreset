@@ -15,14 +15,14 @@ export function CTA() {
 
                     <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
                         <Button href="/booking" variant="mint">
-                            Book Now →
+                            Book Your Cleaning →
                         </Button>
                         <Button
                             href="/contact"
                             variant="outline"
                             className="border-white/40! bg-transparent! text-white! hover:bg-white/10!"
                         >
-                            Free Quote
+                            Get a Free Quote
                         </Button>
                     </div>
                 </div>

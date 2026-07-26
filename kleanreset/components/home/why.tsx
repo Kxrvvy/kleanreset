@@ -30,7 +30,7 @@ export function Why() {
 
                 <h1 className="font-display text-4xl font-extrabold leading-tight text-white text-center md:text-[40px]">
                     <span>
-                        Fast, friendly, and satisfaction <br /> guaranteed
+                        Professional cleaning, <br /> without the worry
                     </span>
                 </h1>
 

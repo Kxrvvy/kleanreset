@@ -47,9 +47,10 @@ export function Services() {
 
                 <div className="grid w-full max-w-6xl justify-items-center gap-6 pt-6 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4">
                     {SERVICES.map(({ icon: Icon, title, description }) => (
-                        <div
+                        <a
                             key={title}
-                            className="flex w-full max-w-[320px] flex-col gap-4 rounded-card border border-line bg-card p-6 sm:max-w-none"
+                            href="/services"
+                            className="group flex w-full max-w-[320px] flex-col gap-4 rounded-card border border-line bg-card p-6 transition-all hover:border-pine/30 hover:shadow-md sm:max-w-none"
                         >
                             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-sea-mist/60 text-pine">
                                 <Icon className="h-5 w-5" />
@@ -60,10 +61,10 @@ export function Services() {
                                 <p className="text-sm text-ink-soft">{description}</p>
                             </div>
 
-                            <a href="/services" className="text-sm font-semibold text-pine hover:underline">
-                                Learn more
-                            </a>
-                        </div>
+                            <span className="mt-auto text-sm font-semibold text-pine group-hover:underline">
+                                Explore service →
+                            </span>
+                        </a>
                     ))}
                 </div>
 
