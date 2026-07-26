@@ -5,14 +5,13 @@
      Bridges next/font → Tailwind. The vars on the right
      are created by layout.tsx; these names are what you
      actually type as classes.                            */
-  --font-sans: var(--font-hanken-grotesk);          /* font-sans    → body */
-  --font-display: var(--font-bricolage-grotesque);  /* font-display → headlines */
-  --font-mono: var(--font-space-mono);              /* font-mono    → eyebrows */
-  --font-quicksand: var(--font-quicksand);
-  --font-lora: var(--font-lora);
+  --font-sans: var(--font-dm-sans);         /* font-sans    → body, UI (DM Sans) */
+  --font-display: var(--font-plus-jakarta); /* font-display → headings (Plus Jakarta Sans) */
+  --font-mono: var(--font-dm-sans);         /* font-mono    → eyebrows/badges/labels (DM Sans) */
 
   /* ── Greens ─────────────────────────────────────────── */
   --color-pine: #0E4D3C;         /* primary: buttons, selected borders, eyebrows */
+  --color-pine-light: #215B4C;   /* pine lightened ~8% (toward white) */
   --color-pine-deep: #093A2D;    /* darkest: footer, dark bands */
   --color-mint: #15C79A;         /* accent: checks, step badges, focus rings */
   --color-mint-bright: #1FE0AD;  /* hover/glow, strip tagline */
@@ -32,6 +31,14 @@
   /* ── Accents ────────────────────────────────────────── */
   --color-lemon: #F4C64B;        /* logo dot, deep-clean badge */
   --color-star-gold: #F0B21B;    /* rating star */
+
+  /* ── Refined brand palette (hero + nav hierarchy) ───── */
+  --color-forest: #075C4F;       /* deep forest green — primary brand, CTAs, emphasis */
+  --color-forest-deep: #06483E;  /* primary CTA hover */
+  --color-teal: #00A88F;         /* secondary accent — active nav, checks, hover */
+  --color-gold: #D9A441;         /* muted warm gold — eyebrow / small highlights only */
+  --color-offwhite: #F7F9F8;     /* subtle neutral background */
+  --color-charcoal: #1F2A28;     /* dark text on light bg, neutral overlays */
 
   /* ── Radii ──────────────────────────────────────────── */
   --radius-card: 16px;           /* rounded-card */

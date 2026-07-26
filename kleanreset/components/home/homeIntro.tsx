@@ -13,7 +13,7 @@ export function HomeIntro() {
         <div className="bg-paper mx-auto grid max-w-[1280px] items-center gap-8 px-4 py-16 sm:px-6 md:px-8 md:py-20 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-12 lg:px-10 xl:gap-16 xl:px-12">
             {/* Left Column */}
             <div className="space-y-6">
-                <Eyebrow>ABOUT THE TEAM</Eyebrow>
+                <Eyebrow>WHO WE ARE</Eyebrow>
 
                 <h2 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl md:text-[40px]">
                     The people behind the spotless

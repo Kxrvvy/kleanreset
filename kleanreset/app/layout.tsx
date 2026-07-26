@@ -1,37 +1,22 @@
 import type { Metadata } from "next";
-import { Space_Mono, Bricolage_Grotesque, Hanken_Grotesk, Quicksand, Lora } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+// Two-font system:
+//   Plus Jakarta Sans — headings & brand typography (font-display)
+//   DM Sans           — body, UI, labels (font-sans, the <body> default)
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "700"], 
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const bricolageGrotesque = Bricolage_Grotesque({
-  variable: "--font-bricolage-grotesque",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
-});
-
-const hankenGrotesk = Hanken_Grotesk({
-  variable: "--font-hanken-grotesk",
-  subsets: ["latin"],
-    weight: ["400", "500", "700", "800"],
-});
-
-const quicksand = Quicksand({
-  variable: "--font-quicksand",
-  subsets: ["latin"],
-    weight: ["400", "500", "700"],
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-    weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 
@@ -48,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} ${bricolageGrotesque.variable} ${hankenGrotesk.variable} ${quicksand.variable} ${lora.variable} h-full scroll-smooth antialiased`}
+      className={`${plusJakarta.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
         <Nav />

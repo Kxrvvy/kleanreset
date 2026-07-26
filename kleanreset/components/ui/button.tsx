@@ -6,7 +6,7 @@
 import Link, { type LinkProps } from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
-type Variant = "pine" | "mint" | "outline" | "ghost";
+type Variant = "pine" | "mint" | "outline" | "ghost" | "forest" | "forestOutline";
 type Size = "sm" | "md";
 
 const base =
@@ -15,12 +15,15 @@ const base =
     "focus-visible:ring-mint focus-visible:ring-offset-2 " +
     "disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
 
-// Record<Variant, string> forces all four variants to be defined.
+// Record<Variant, string> forces every variant to be defined.
 const variants: Record<Variant, string> = {
     pine: "bg-pine text-white hover:bg-pine-deep",
     mint: "bg-mint text-pine-deep hover:bg-mint-bright",
     outline: "bg-card text-ink border border-line hover:bg-paper",
     ghost: "text-ink hover:bg-paper",
+    // Refined brand palette (hero + nav): forest primary, white-on-forest secondary.
+    forest: "bg-forest text-white hover:bg-forest-deep",
+    forestOutline: "bg-card text-forest border border-line shadow-sm hover:bg-offwhite",
 };
 
 const sizes: Record<Size, string> = {

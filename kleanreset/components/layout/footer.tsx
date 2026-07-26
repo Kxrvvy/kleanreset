@@ -106,6 +106,19 @@ export function Footer() {
             <p className="mt-2 text-xs text-celadon/70">
               Free quote · no obligation
             </p>
+
+            <h3 className="mb-3 mt-6 font-mono text-xs uppercase tracking-widest text-mint">
+              Follow us on
+            </h3>
+            <a
+              href="https://www.facebook.com/profile.php?id=61589492674045"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Kleanreset on Facebook"
+              className="inline-flex items-center justify-center rounded-md bg-mint p-1.5 transition-opacity hover:opacity-80"
+            >
+              <Image src="/fb-icon.png" alt="Facebook" width={24} height={24} />
+            </a>
           </div>
         </div>
 

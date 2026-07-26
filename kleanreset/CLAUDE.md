@@ -85,13 +85,15 @@ Opacity via slash: `bg-sea-mist/4`. Radii: `rounded-card` (16px), `rounded-pill`
 
 ### Fonts
 
+**Two-font system** (Plus Jakarta Sans = brand/headings, DM Sans = everything else):
+
 | Class | Font | Use |
 |---|---|---|
-| `font-display` | Bricolage Grotesque | Headlines, ~weight 800 |
-| `font-sans` | Hanken Grotesk | Body, UI. Default on `<body>` |
-| `font-mono` | Space Mono | Eyebrows, small caps details |
+| `font-display` | Plus Jakarta Sans | Headings & brand typography. Weights 600/700/800 |
+| `font-sans` | DM Sans | Body, UI, buttons, nav. Default on `<body>`. Weights 400/500/600/700 |
+| `font-mono` | DM Sans | Legacy alias — eyebrows/badges/small labels (NOT monospace) |
 
-The bridge (`--font-sans: var(--font-hanken-grotesk)`) is required or `font-sans` silently falls back to Arial.
+Loaded via `next/font/google` in `layout.tsx` (`--font-plus-jakarta`, `--font-dm-sans`). The bridge in `@theme` (`--font-sans: var(--font-dm-sans)` etc.) is required or `font-sans` silently falls back to Arial. `font-mono` is kept only so existing usages render DM Sans; there is no monospace font — don't add one. Old fonts (Bricolage, Hanken, Space Mono, Quicksand, Lora) were removed.
 
 ---
 

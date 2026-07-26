@@ -35,15 +35,29 @@ export function How() {
                     Book in two minutes, relax in one
                 </h2>
 
-                <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
-                    {STEPS.map((step) => (
-                        <div key={step.number} className="space-y-3">
-                            <span className="font-mono text-sm font-bold text-ink">{step.number}</span>
-                            <div className="h-0.5 w-full bg-mint" />
-                            <h3 className="font-semibold text-ink">{step.title}</h3>
-                            <p className="text-sm text-ink-soft">{step.description}</p>
-                        </div>
-                    ))}
+                {/* Faint continuous track behind the step markers (lg+) so the
+                    four steps read as one connected 01 → 02 → 03 → 04 progression.
+                    The mint segment over each card sits on top of it. */}
+                <div className="relative mt-12">
+                    <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-x-0 top-[26px] hidden h-px bg-line lg:block"
+                    />
+                    <div className="relative grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+                        {STEPS.map((step, i) => (
+                            <div key={step.number} className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <span className="font-mono text-sm font-bold text-ink">{step.number}</span>
+                                    {i < STEPS.length - 1 && (
+                                        <span aria-hidden className="text-mint">→</span>
+                                    )}
+                                </div>
+                                <div className="h-0.5 w-full bg-mint" />
+                                <h3 className="font-semibold text-ink">{step.title}</h3>
+                                <p className="text-sm text-ink-soft">{step.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
