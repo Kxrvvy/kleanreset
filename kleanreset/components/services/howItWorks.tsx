@@ -74,7 +74,7 @@ export function HowItWorks() {
 
     return (
         <section id="checklist" className="scroll-mt-28">
-            <div className="px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
+            <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
                 <div className="max-w-xl space-y-4 text-left">
                     <Eyebrow>HOW IT WORKS</Eyebrow>
                     <h2 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
@@ -86,7 +86,7 @@ export function HowItWorks() {
                     </p>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
                     {TABS.map((t, i) => (
                         <button
                             key={t.label}

@@ -1,139 +1,160 @@
+import Image from "next/image";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import {
-    Home,
-    Sparkles,
-    Boxes,
-    RefreshCw,
-    Layers,
-    Truck,
-    Building2,
-    Stethoscope,
-    type LucideIcon,
-} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-type Card = {
-    icon: LucideIcon;
+type ServiceCard = {
+    image: string;
     title: string;
     description: string;
     cta: string;
     href: string;
-    highlight?: boolean;
 };
 
-const CARDS: Card[] = [
+// Core, confidently-bookable services. `image` paths resolve to
+// public/services/<file> — drop the real photos in using these names.
+const PRIMARY: ServiceCard[] = [
     {
-        icon: Home,
+        image: "/ourWork/Work4/8.jpg",
         title: "Home cleaning",
         description:
-            "Regular upkeep that keeps your home fresh, tidy, and welcoming between deep cleans.",
-        cta: "See pricing",
+            "Keep your home fresh, comfortable, and ready for everyday living with reliable routine cleaning.",
+        cta: "View service",
         href: "#pricing",
     },
     {
-        icon: Sparkles,
+        image: "/ourWork/Work2/8.jpg",
         title: "Deep cleaning",
         description:
-            "A top-to-bottom reset for move-ins, spring cleans, and the corners no one ever gets to.",
-        cta: "See pricing",
+            "A more detailed clean for spaces that need extra attention — from kitchens and bathrooms to hard-to-reach areas.",
+        cta: "View service",
         href: "#pricing",
     },
     {
-        icon: Boxes,
-        title: "Decluttering / Organizing",
+        image: "/vacation_rental.jpg",
+        title: "Airbnb & vacation rental",
         description:
-            "We help sort, box, and organize rooms that have gotten away from you — closets, garages, home offices — so the space is livable again.",
-        cta: "Contact us",
-        href: "/contact",
-    },
-    {
-        icon: RefreshCw,
-        title: "Airbnb Turnovers",
-        description:
-            "Fast turnovers between stays — rooms reset, linens refreshed, and essentials restocked for a five-star welcome.",
-        cta: "Book now",
+            "Help keep your rental guest-ready with detailed cleaning between stays.",
+        cta: "Book this service",
         href: "/booking?category=vacation_rental",
     },
     {
-        icon: Layers,
+        image: "/ourWork/Work1/3.jpg",
         title: "Carpet cleaning",
         description:
-            "Deep extraction for carpets, rugs, and stairs — lifts dirt and odours regular vacuuming can't reach.",
-        cta: "See pricing",
+            "Refresh your carpets and help maintain a cleaner, more comfortable space.",
+        cta: "View service",
         href: "#pricing",
     },
     {
-        icon: Truck,
-        title: "Move-In / Move-Out",
+        image: "/ourWork/Work3/8.jpg",
+        title: "Commercial & office",
         description:
-            "A detailed clean before keys change hands — empty cabinets, inside appliances, baseboards, the works.",
-        cta: "Contact us",
-        href: "/contact",
-    },
-    {
-        icon: Building2,
-        title: "Commercial cleaning",
-        description:
-            "Scheduled cleaning for offices, lobbies, and shared spaces — sanitized, spotless, and always presentable.",
+            "Professional cleaning for offices and workspaces, tailored to the needs and layout of your business.",
         cta: "Get a quote",
         href: "/booking?category=commercial",
     },
     {
-        icon: Stethoscope,
-        title: "Dental & clinic cleaning",
+        image: "/ourWork/Work3/21.jpg",
+        title: "Dental & clinic",
         description:
-            "Clinical-grade sanitizing for waiting rooms, reception, and treatment areas — built around infection-control standards.",
+            "Detailed cleaning for professional healthcare environments — keeping reception, waiting, and shared areas clean and presentable.",
         cta: "Get a quote",
         href: "/booking?category=commercial&type=clinic",
-        highlight: true,
     },
 ];
+
+// Request-based services — availability varies, so they're kept visually
+// secondary and route to contact rather than a booking flow.
+const ADDITIONAL = ["Move-in / move-out", "Decluttering / organizing"];
 
 export function Offer() {
     return (
         <section id="offer" className="scroll-mt-28">
-            <div className="bg-linear-to-b from-grayish to-sea-mist px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
-                <div className="flex flex-col items-start gap-4 text-left">
-                    <Eyebrow>WHAT WE OFFER</Eyebrow>
-                    <h2 className="max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
-                        We provide services for you
-                    </h2>
-                    <p className="max-w-2xl text-sm text-ink-soft sm:text-base">
-                        Six ways we keep your space spotless — every one backed by the same satisfaction guarantee.
-                    </p>
-                </div>
+            <div className="bg-linear-to-b from-grayish to-sea-mist px-6 py-16 md:px-gutter md:py-24">
+                {/* Full-width with 55px side gutters up to 1600px, then caps and
+                    centers so cards don't stretch huge on large/ultrawide monitors. */}
+                <div className="mx-auto max-w-[1600px]">
+                    <div className="flex flex-col items-start gap-4 text-left">
+                        <Eyebrow>WHAT WE OFFER</Eyebrow>
+                        <h2 className="max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
+                            Cleaning services for the spaces that matter most
+                        </h2>
+                        <p className="max-w-2xl text-sm text-ink-soft sm:text-base">
+                            From everyday home cleaning to detailed deep cleans, vacation rentals,
+                            offices, and professional spaces — choose the service that best fits
+                            your needs.
+                        </p>
+                    </div>
 
-                <div className="mt-12 grid justify-items-center gap-6 sm:grid-cols-2 xl:grid-cols-4">
-                    {CARDS.map(({ icon: Icon, title, description, cta, href, highlight }) => (
-                        <div
-                            key={title}
-                            className={`flex min-h-[240px] w-full max-w-[360px] flex-col gap-4 rounded-card border p-6 sm:max-w-none xl:max-w-none ${highlight
-                                    ? "border-pine bg-pine text-white"
-                                    : "border-line bg-card text-ink"
-                                }`}
-                        >
-                            <span
-                                className={`flex h-10 w-10 items-center justify-center rounded-lg ${highlight ? "bg-white/15 text-white" : "bg-sea-mist/60 text-pine"
-                                    }`}
+                    {/* Primary services */}
+                    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        {PRIMARY.map(({ image, title, description, cta, href }) => (
+                            <a
+                                key={title}
+                                href={href}
+                                className="group flex flex-col overflow-hidden rounded-card border border-line bg-card transition-all duration-200 hover:-translate-y-1 hover:border-pine/30 hover:shadow-md"
                             >
-                                <Icon className="h-5 w-5" />
-                            </span>
+                                <div className="relative aspect-[16/10] w-full overflow-hidden bg-sea-mist/60">
+                                    <Image
+                                        src={image}
+                                        alt={title}
+                                        fill
+                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                                    />
+                                </div>
 
-                            <div className="flex-1 space-y-2">
-                                <h3 className="font-semibold">{title}</h3>
-                                <p className={`text-sm ${highlight ? "text-celadon" : "text-ink-soft"}`}>
-                                    {description}
+                                <div className="flex flex-1 flex-col gap-3 p-6">
+                                    <h3 className="font-semibold text-ink">{title}</h3>
+                                    <p className="flex-1 text-sm text-ink-soft">{description}</p>
+                                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-pine">
+                                        {cta}
+                                        <span
+                                            aria-hidden
+                                            className="transition-transform group-hover:translate-x-0.5"
+                                        >
+                                            →
+                                        </span>
+                                    </span>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Additional / request-based services — visually secondary */}
+                    <div className="mt-10 rounded-card border border-line bg-paper2 p-6 md:mt-12 md:p-8">
+                        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                            <div className="space-y-2">
+                                <Eyebrow>NEED SOMETHING EXTRA?</Eyebrow>
+                                <h3 className="font-display text-xl font-bold text-ink">
+                                    Additional services, available on request
+                                </h3>
+                                <p className="max-w-xl text-sm text-ink-soft">
+                                    Looking for a move-in / move-out clean, decluttering, or another
+                                    cleaning request? Availability may vary depending on your needs and
+                                    the space — contact us to check.
                                 </p>
+                                <div className="flex flex-wrap gap-2 pt-1">
+                                    {ADDITIONAL.map((item) => (
+                                        <span
+                                            key={item}
+                                            className="rounded-lg border border-line bg-card px-3 py-1.5 text-xs font-semibold text-ink"
+                                        >
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
 
-                            <a
-                                href={href}
-                                className={`text-sm font-semibold hover:underline ${highlight ? "text-mint-bright" : "text-pine"
-                                    }`}
+                            <Button
+                                href="/contact"
+                                variant="forestOutline"
+                                className="shrink-0 self-start md:self-auto"
                             >
-                                {cta} →
-                            </a>
+                                Ask About Availability →
+                            </Button>
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
         </section>

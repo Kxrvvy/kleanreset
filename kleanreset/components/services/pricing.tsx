@@ -49,9 +49,9 @@ const TABLES = [
 export function Pricing() {
     return (
         <section id="pricing" className="scroll-mt-28">
-            <div className="px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
+            <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 md:px-8 md:py-24 lg:px-10 xl:px-12">
                 {/* Header row */}
-                <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+                <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
                     <div className="space-y-4 text-left ">
                         <Eyebrow>SIMPLE PRICING</Eyebrow>
                         <h2 className="max-w-132.25 font-display text-4xl font-extrabold leading-tight text-ink md:text-5xl">
@@ -62,7 +62,7 @@ export function Pricing() {
                         </span>
                     </div>
 
-                    <p className="max-w-sm font-mono text-lg leading-relaxed text-ink-soft md:self-end md:text-right">
+                    <p className="max-w-sm font-mono text-lg leading-relaxed text-ink-soft lg:self-end lg:text-right">
                         Residential jobs are priced by beds and baths. Add roughly 30 minutes
                         for each additional bed and bath. Deep cleans take longer for a more
                         thorough result.
