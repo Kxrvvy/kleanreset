@@ -88,4 +88,21 @@ export const workJobs: WorkJob[] = [
       "/ourWork/Work2/18.jpg",
     ],
   },
+  {
+    id: "job-4",
+    caption: "Another successful regular cleaning completed. ✨ Thank you for trusting KleanReset to keep your home fresh, clean, and spotless! ",
+    photos: [
+      "/ourWork/Work4/1.jpg",
+      "/ourWork/Work4/2.jpg",
+      "/ourWork/Work4/3.jpg",
+      "/ourWork/Work4/4.jpg",
+      "/ourWork/Work4/5.jpg",
+      "/ourWork/Work4/6.jpg",
+      "/ourWork/Work4/7.jpg",
+      "/ourWork/Work4/8.jpg",
+      "/ourWork/Work4/9.jpg",
+      "/ourWork/Work4/10.jpg",
+
+    ],
+  },
 ];
