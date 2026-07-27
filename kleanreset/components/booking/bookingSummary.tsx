@@ -31,7 +31,6 @@ export function BookingSummary({ estimate }: { estimate: Estimate }) {
   const contact = watch("contact");
   const address = watch("address");
   const property = watch("property");
-  const extras = watch("extras") ?? [];
   const schedule = watch("schedule");
   const access = watch("access");
 
@@ -47,7 +46,6 @@ export function BookingSummary({ estimate }: { estimate: Estimate }) {
       : property?.kind === "carpet"
       ? `${property.rooms ?? 0} rooms`
       : undefined;
-  const extrasVal = extras.length ? `${extras.length} selected` : undefined;
   const scheduleVal = schedule?.date
     ? `${schedule.date}${schedule.arrivalTime ? ` · ${schedule.arrivalTime}` : ""}`
     : undefined;
@@ -61,7 +59,6 @@ export function BookingSummary({ estimate }: { estimate: Estimate }) {
     { label: "Address", value: addressVal, anchor: "section-address" },
     { label: "Service", value: SERVICE_LABEL[service], anchor: "section-service" },
     { label: "Property", value: propertyVal, anchor: "section-property" },
-    { label: "Extras", value: extrasVal, anchor: "section-extras" },
     { label: "Schedule", value: scheduleVal, anchor: "section-schedule" },
     { label: "Access", value: accessVal, anchor: "section-access" },
   ];
