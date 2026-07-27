@@ -15,7 +15,6 @@ import { ContactSection } from "@/components/booking/sections/contactSection";
 import { AddressSection } from "@/components/booking/sections/addressSection";
 import { ServiceSection } from "@/components/booking/sections/serviceSection";
 import { PropertySection } from "@/components/booking/sections/propertySection";
-import { ExtrasSection } from "@/components/booking/sections/extraSection";
 import { ScheduleSection } from "@/components/booking/sections/scheduleSection";
 import { AccessSection } from "@/components/booking/sections/accessSection";
 import { NotesSection } from "@/components/booking/sections/notesSection";
@@ -100,7 +99,6 @@ export function BookingForm() {
             <AddressSection />
             <ServiceSection />
             <PropertySection />
-            <ExtrasSection />
             <ScheduleSection />
             <AccessSection />
             <NotesSection />

@@ -3,7 +3,7 @@
 // Shared input primitives + a labelled-error wrapper. Every section uses these.
 
 import { forwardRef } from "react";
-import { useFormContext, type FieldError } from "react-hook-form";
+import { type FieldError } from "react-hook-form";
 
 export const fieldCls =
   "w-full rounded-card border border-line bg-field px-4 py-2.5 text-sm text-ink " +
