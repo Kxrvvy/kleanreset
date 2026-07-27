@@ -33,7 +33,13 @@ function Tile({
       onClick={onClick}
       className={`relative block h-full w-full overflow-hidden ${className}`}
     >
-      <Image src={src} alt={alt} fill className="object-cover" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(min-width: 704px) 672px, 100vw"
+      />
       {children}
     </button>
   );

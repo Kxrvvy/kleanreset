@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${plusJakarta.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">

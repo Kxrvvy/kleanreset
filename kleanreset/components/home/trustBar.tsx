@@ -1,28 +1,46 @@
 // components/home/trustBar.tsx
 //
-// Compact credibility strip directly below the Hero. Answers the visitor's
-// first question — "can I trust these people in my home?" — at a glance.
-// Kept deliberately light so it never competes with the Hero above it.
+// Elevated credibility cards that overlap the bottom of the Hero (reference
+// layout). Each card: icon → title → short reassurance. Answers "can I trust
+// them in my home?" the moment the hero ends. Kept lighter than the hero.
 
 import { ShieldCheck, Clock, BadgeCheck, Leaf } from "lucide-react";
 
 const POINTS = [
-    { icon: ShieldCheck, label: "Vetted & insured cleaners" },
-    { icon: Clock, label: "Reliable & on time" },
-    { icon: BadgeCheck, label: "Satisfaction guaranteed" },
-    { icon: Leaf, label: "Eco-friendly products" },
+    {
+        icon: ShieldCheck,
+        title: "Vetted & insured",
+        
+    },
+    {
+        icon: Clock,
+        title: "Reliable & on time",
+    },
+    {
+        icon: BadgeCheck,
+        title: "Satisfaction guaranteed",
+    },
+    {
+        icon: Leaf,
+        title: "Eco-friendly products",
+    },
 ];
 
 export function TrustBar() {
     return (
-        <section className="border-b border-line bg-paper2">
-            <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-4 px-4 py-6 sm:px-6 md:grid-cols-4 md:px-8 lg:px-10 xl:px-12">
-                {POINTS.map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex items-center gap-2.5">
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sea-mist/60 text-pine">
-                            <Icon className="h-4 w-4" />
+        // Negative top margin lifts the cards up over the hero; z-30 keeps them
+        // above the hero's own layers. Tune the -mt values to taste.
+        <section className="relative z-40 -mt-14 px-4 sm:px-6 md:-mt-0 md:px-8 lg:px-10 xl:px-12">
+            <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+                {POINTS.map(({ icon: Icon, title }) => (
+                    <div
+                        key={title}
+                        className="flex flex-col items-center gap-3 rounded-card border border-line bg-card p-6 text-center shadow-lg"
+                    >
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sea-mist/60 text-pine">
+                            <Icon className="h-6 w-6" />
                         </span>
-                        <span className="text-sm font-medium text-ink">{label}</span>
+                        <h3 className="font-display text-base font-bold text-ink">{title}</h3>
                     </div>
                 ))}
             </div>

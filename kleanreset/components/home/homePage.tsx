@@ -15,7 +15,7 @@ export default function HomePage() {
     return (
         <>
             <Hero />
-            <TrustBar />
+            {/*<TrustBar />*/}
             <Services />
             <HomeIntro />
             <Why />

@@ -19,14 +19,22 @@ type OpenPhoto = {
   index: number;
 };
 
+// Numeric part of a "job-#" id, for ordering.
+function jobNumber(id: string) {
+  return Number(id.replace(/\D/g, "")) || 0;
+}
+
 export function WorkFeed({ jobs }: Props) {
   const [open, setOpen] = useState<OpenPhoto | null>(null);
+
+  // Newest first — highest job-# at the top, regardless of array order.
+  const orderedJobs = [...jobs].sort((a, b) => jobNumber(b.id) - jobNumber(a.id));
 
   const activeJob = open ? jobs.find((job) => job.id === open.jobId) ?? null : null;
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-6">
-      {jobs.map((job) => (
+      {orderedJobs.map((job) => (
         <article key={job.id} className="rounded-card border border-line bg-card p-4">
           <p className="mb-3 whitespace-pre-line text-ink">{job.caption}</p>
           <PhotoCluster

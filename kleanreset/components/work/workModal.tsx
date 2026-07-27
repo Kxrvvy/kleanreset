@@ -61,6 +61,7 @@ export function WorkModal({ job, index, onClose, onPrev, onNext }: Props) {
             alt={job.caption}
             fill
             className="object-contain"
+            sizes="(min-width: 768px) 768px, 100vw"
           />
 
           {!isFirst && (
