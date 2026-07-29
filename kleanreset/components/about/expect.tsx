@@ -1,25 +1,31 @@
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { ListChecks, MessageCircle, CalendarCheck, Sparkles } from "lucide-react";
 
-const STATS = [
+// Realistic expectations — no numeric guarantees or unconfirmed claims
+// (no "100% satisfaction", "24h re-clean", "vetted & insured", etc.).
+const EXPECT = [
     {
-        value: "100%",
-        label: "Satisfaction guarantee",
-        description: "We'll make it right, to your complete satisfaction.",
+        icon: ListChecks,
+        title: "Detailed Service",
+        description:
+            "Attention to the areas that matter, with care given to the details that make a difference.",
     },
     {
-        value: "24h",
-        label: "Re-clean promise",
-        description: "Missed a spot? Tell us within a day.",
+        icon: MessageCircle,
+        title: "Clear Communication",
+        description:
+            "Easy communication before and during the service so you can ask questions and share your needs.",
     },
     {
-        value: "Locally",
-        label: "Owned & operated",
-        description: "Consistently loved by locals.",
+        icon: CalendarCheck,
+        title: "Reliable Service",
+        description:
+            "A consistent approach focused on providing dependable cleaning services.",
     },
     {
-        value: "100%",
-        label: "Vetted & insured",
-        description: "Every cleaner, every visit.",
+        icon: Sparkles,
+        title: "Professional Care",
+        description: "Every space is treated with respect and attention.",
     },
 ];
 
@@ -27,24 +33,27 @@ export function Expect() {
     return (
         <section>
             <div className="flex flex-col items-center justify-center gap-6 bg-pine-deep px-4 py-16 text-center sm:px-6 md:px-8 md:py-20 lg:px-10 xl:px-12">
-                <Eyebrow tone="light">WHAT YOU EXPECT</Eyebrow>
+                <Eyebrow tone="light">WHAT TO EXPECT</Eyebrow>
 
                 <h2 className="max-w-xl font-display text-4xl font-extrabold leading-tight text-white md:text-[40px]">
-                    What every booking comes with
+                    What you can expect
                 </h2>
 
                 <p className="max-w-lg text-celadon">
-                    No fine print, just the standards we hold ourselves to on every single job.
+                    A straightforward cleaning experience built around the standards we aim to
+                    maintain on every job.
                 </p>
 
                 <div className="grid w-full max-w-5xl gap-4 pt-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {STATS.map(({ value, label, description }) => (
+                    {EXPECT.map(({ icon: Icon, title, description }) => (
                         <div
-                            key={label}
-                            className="flex flex-col items-center gap-1 rounded-card bg-white/5 p-6"
+                            key={title}
+                            className="flex flex-col items-center gap-2 rounded-card bg-white/5 p-6 text-center"
                         >
-                            <p className="font-mono text-3xl font-bold text-mint-bright">{value}</p>
-                            <p className="font-semibold text-white">{label}</p>
+                            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint/15 text-mint-bright">
+                                <Icon className="h-5 w-5" />
+                            </span>
+                            <p className="font-semibold text-white">{title}</p>
                             <p className="text-sm text-celadon">{description}</p>
                         </div>
                     ))}

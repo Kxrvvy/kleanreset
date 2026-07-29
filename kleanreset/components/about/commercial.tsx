@@ -1,30 +1,30 @@
 import { Eyebrow } from "../ui/eyebrow";
-import { Home, Footprints, Building2, RefreshCw } from "lucide-react";
+import { Sparkles, RefreshCw, MessageSquare, Smile } from "lucide-react";
 
-const SERVICES = [
+const VALUES = [
     {
-        icon: Home,
-        title: "Care in every corner",
+        icon: Sparkles,
+        title: "Care in Every Corner",
         description:
-            "We clean the spots most people skip, because the details are what  you actually notice.",
-    },
-    {
-        icon: Footprints,
-        title: "Consistency you trust",
-        description:
-            "Same standard, same care, every visit; so you always know what you're geting.",
-    },
-    {
-        icon: Building2,
-        title: "Honest & transparent",
-        description:
-            "Clear pricing and straight answers. Vetted, insured cleaners you can feel safe with.",
+            "We pay attention to the details that help a space feel truly clean and cared for.",
     },
     {
         icon: RefreshCw,
-        title: "Kind to the planet",
+        title: "Consistency You Trust",
         description:
-            "Eco-friendly products by default — better for your space and everyone in it.",
+            "We aim to provide a dependable standard of service across every visit.",
+    },
+    {
+        icon: MessageSquare,
+        title: "Honest & Transparent",
+        description:
+            "We believe in clear communication and straightforward service.",
+    },
+    {
+        icon: Smile,
+        title: "Customer-Focused Service",
+        description:
+            "We want the cleaning experience to be simple, comfortable, and convenient for our customers.",
     },
 ];
 
@@ -33,7 +33,7 @@ export function Commercial() {
         <section>
             <div className="flex flex-col items-center justify-center gap-6 bg-paper px-4 py-16 sm:px-6 md:px-8 md:py-20 lg:px-10 xl:px-12">
                 <div className="w-full max-w-6xl">
-                    <Eyebrow>OUR SERVICES</Eyebrow>
+                    <Eyebrow>OUR VALUES</Eyebrow>
                 </div>
 
                 <div className="w-full max-w-6xl space-y-6">
@@ -43,17 +43,17 @@ export function Commercial() {
                 </div>
 
                 <div className="grid w-full max-w-6xl gap-6 pt-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {SERVICES.map(({ icon: Icon, title, description }) => (
+                    {VALUES.map(({ icon: Icon, title, description }) => (
                         <div
                             key={title}
-                            className="flex w-full flex-col gap-2 rounded-card border border-line bg-card p-6"
+                            className="flex w-full flex-col gap-2 rounded-card border border-line bg-card p-6 transition-all hover:-translate-y-1 hover:border-pine/30 hover:shadow-md"
                         >
                             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-sea-mist/60 text-pine">
                                 <Icon className="h-5 w-5" />
                             </span>
 
                             <div className="space-y-2">
-                                <h3 className="font-semibold text-ink text-[18px]">{title}</h3>
+                                <h3 className="text-[18px] font-semibold text-ink">{title}</h3>
                                 <p className="text-[13px] text-ink-soft">{description}</p>
                             </div>
                         </div>

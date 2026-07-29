@@ -131,12 +131,9 @@ export function Nav () {
                     })}
                 </ul>
 
-                {/* Desktop CTAs */}
+                {/* Desktop CTA — Book Now is the single primary action.
+                    "Ask a question" lives in the Contact nav link. */}
                 <div className="hidden items-center gap-2 md:flex">
-                    <Button href="/contact" variant="forestOutline" size="sm">
-                        Get a Quote
-                    </Button>
-
                     {!onBookingPage && (
                         <Button href="/booking" variant="forest" size="sm">
                             Book Now
@@ -244,16 +241,6 @@ export function Nav () {
                     })}
 
                     <div className="mt-2 flex flex-col gap-2 border-t border-line pt-3">
-                        <Button
-                            href="/booking?intent=quote"
-                            variant="forestOutline"
-                            size="sm"
-                            className="w-full"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Get a Quote
-                        </Button>
-
                         {!onBookingPage && (
                             <Button
                                 href="/booking"
@@ -265,6 +252,16 @@ export function Nav () {
                                 Book Now
                             </Button>
                         )}
+
+                        <Button
+                            href="/contact"
+                            variant="forestOutline"
+                            size="sm"
+                            className="w-full"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Ask a Question
+                        </Button>
                     </div>
                 </div>
             )}

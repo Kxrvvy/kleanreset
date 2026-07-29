@@ -6,11 +6,12 @@ export function CTA() {
             <div className="bg-grayish px-4 py-16 sm:px-6 md:px-8 md:py-10 lg:px-10 xl:px-12">
                 <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-4 rounded-[40px] bg-pine-deep px-6 py-12 text-center sm:px-8 md:px-12">
                     <h2 className="font-display text-3xl font-extrabold text-white md:text-4xl">
-                        Come see the difference
+                        Ready for a cleaner space?
                     </h2>
 
                     <p className="max-w-md text-celadon">
-                        Book your first clean or grab a free quote today — and find out what “done right” actually feels like.
+                        Book your cleaning online, or reach out if you have a question about the
+                        right service for your space.
                     </p>
 
                     <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
@@ -22,7 +23,7 @@ export function CTA() {
                             variant="outline"
                             className="border-white/40! bg-transparent! text-white! hover:bg-white/10!"
                         >
-                            Free Quote
+                            Ask a Question
                         </Button>
                     </div>
                 </div>

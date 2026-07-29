@@ -14,27 +14,27 @@ type ServiceCard = {
 // public/services/<file> — drop the real photos in using these names.
 const PRIMARY: ServiceCard[] = [
     {
-        image: "/ourWork/Work4/8.jpg",
+        image: "/ourWork/Work4/1.jpg",
         title: "Home cleaning",
         description:
             "Keep your home fresh, comfortable, and ready for everyday living with reliable routine cleaning.",
-        cta: "View service",
-        href: "#pricing",
+        cta: "Book now",
+        href: "/booking",
     },
     {
         image: "/ourWork/Work2/8.jpg",
         title: "Deep cleaning",
         description:
             "A more detailed clean for spaces that need extra attention — from kitchens and bathrooms to hard-to-reach areas.",
-        cta: "View service",
-        href: "#pricing",
+        cta: "Book now",
+        href: "/booking",
     },
     {
         image: "/vacation_rental.jpg",
         title: "Airbnb & vacation rental",
         description:
             "Help keep your rental guest-ready with detailed cleaning between stays.",
-        cta: "Book this service",
+        cta: "Book now",
         href: "/booking?category=vacation_rental",
     },
     {
@@ -42,23 +42,23 @@ const PRIMARY: ServiceCard[] = [
         title: "Carpet cleaning",
         description:
             "Refresh your carpets and help maintain a cleaner, more comfortable space.",
-        cta: "View service",
-        href: "#pricing",
+        cta: "Book now",
+        href: "/booking",
     },
     {
         image: "/ourWork/Work3/8.jpg",
         title: "Commercial & office",
         description:
-            "Professional cleaning for offices and workspaces, tailored to the needs and layout of your business.",
-        cta: "Get a quote",
+            "Professional cleaning for offices and workspaces, tailored to the needs and layout of your business. You'll request a personalized quote as you go.",
+        cta: "Book now",
         href: "/booking?category=commercial",
     },
     {
         image: "/ourWork/Work3/21.jpg",
         title: "Dental & clinic",
         description:
-            "Detailed cleaning for professional healthcare environments — keeping reception, waiting, and shared areas clean and presentable.",
-        cta: "Get a quote",
+            "Detailed cleaning for professional healthcare environments — keeping reception, waiting, and shared areas clean and presentable. You'll request a personalized quote as you go.",
+        cta: "Book now",
         href: "/booking?category=commercial&type=clinic",
     },
 ];
@@ -151,7 +151,7 @@ export function Offer() {
                                 variant="forestOutline"
                                 className="shrink-0 self-start md:self-auto"
                             >
-                                Ask About Availability →
+                                Ask a Question →
                             </Button>
                         </div>
                     </div>

@@ -146,10 +146,6 @@ export interface BookingPayload {
     gateCode?: string;
   };
   notes?: string;
-  consent: {
-    terms: boolean;
-    privacy: boolean;
-  };
   meta: {
     submittedAt: string;
     estimate: Estimate;

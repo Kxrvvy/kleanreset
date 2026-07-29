@@ -117,7 +117,7 @@ export function Footer() {
               aria-label="Follow Kleanreset on Facebook"
               className="inline-flex items-center justify-center rounded-md bg-mint p-1.5 transition-opacity hover:opacity-80"
             >
-              <Image src="/fb-icon.png" alt="Facebook" width={24} height={24} />
+              <Image src="/fb-icon.png" alt="Facebook" width={24} height={24} className="h-6 w-6" />
             </a>
           </div>
         </div>

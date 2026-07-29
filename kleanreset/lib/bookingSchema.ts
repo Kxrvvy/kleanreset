@@ -153,13 +153,6 @@ export const bookingSchema = z.object({
         gateCode: z.string().optional(),
     }),
     notes: z.string().optional(),
-    consent: z.object({
-        // .literal(true) = MUST be true. An unchecked box fails validation.
-        terms: z.literal(true, { message: "You must agree to the Terms" }),
-        privacy: z.literal(true, {
-            message: "You must agree to the Privacy Policy",
-        }),
-    }),
 });
 
 // zod can DERIVE the TypeScript type from the schema. This gives us a
@@ -171,6 +164,10 @@ export type BookingFormValues = z.infer<typeof bookingSchema>;
 // plus the free-text message. Mirrors types/booking.ts ContactPayload.
 
 export const contactPayloadSchema = contactSchema.extend({
+  // Phone may be blank here: the "Ask a Question" pathway lets people reach out
+  // without leaving a number (the quote pathway still requires it client-side).
+  // Kept as a plain string (not optional) so ContactPayload stays satisfied.
+  phone: z.string(),
   message: z.string().min(1, "Please enter a message"),
   submittedAt: z.string().min(1),
 });

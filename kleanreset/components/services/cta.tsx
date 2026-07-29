@@ -10,7 +10,7 @@ export function CTA() {
                     </h2>
 
                     <p className="max-w-md text-celadon">
-                        Get a free, same-day quote — no obligation, no pressure. We&apos;ll
+                        Get started in a couple of minutes — no obligation, no pressure. We&apos;ll
                         confirm your preferred date within 24 hours.
                     </p>
 
@@ -23,7 +23,7 @@ export function CTA() {
                             variant="outline"
                             className="border-white/40! bg-transparent! text-white! hover:bg-white/10!"
                         >
-                            Get a free quote
+                            Ask a Question
                         </Button>
                     </div>
                 </div>

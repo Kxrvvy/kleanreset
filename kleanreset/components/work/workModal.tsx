@@ -1,37 +1,37 @@
 // components/work/workModal.tsx
 //
-// Lightbox for a single WorkJob. Navigates only within that job's own
-// photos array — the feed passes a fresh job + index in, this component
-// owns none of the feed's state.
+// Portfolio lightbox for a single project. Browse all of that project's photos
+// with prev/next, keyboard arrows, a count, and a thumbnail strip. Owns none
+// of the portfolio's state — index changes are reported via onIndexChange.
 
 "use client";
 
 import Image from "next/image";
 import { useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { WorkJob } from "@/lib/workData";
+import type { WorkProject } from "@/lib/workData";
 
 type Props = {
-  job: WorkJob;
+  project: WorkProject;
   index: number;
   onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
+  onIndexChange: (index: number) => void;
 };
 
-export function WorkModal({ job, index, onClose, onPrev, onNext }: Props) {
+export function WorkModal({ project, index, onClose, onIndexChange }: Props) {
+  const total = project.photos.length;
   const isFirst = index === 0;
-  const isLast = index === job.photos.length - 1;
+  const isLast = index === total - 1;
 
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft" && !isFirst) onPrev();
-      if (e.key === "ArrowRight" && !isLast) onNext();
+      if (e.key === "ArrowLeft" && !isFirst) onIndexChange(index - 1);
+      if (e.key === "ArrowRight" && !isLast) onIndexChange(index + 1);
     }
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [isFirst, isLast, onClose, onPrev, onNext]);
+  }, [index, isFirst, isLast, onClose, onIndexChange]);
 
   return (
     <div
@@ -39,26 +39,32 @@ export function WorkModal({ job, index, onClose, onPrev, onNext }: Props) {
       onClick={onClose}
     >
       <div
-        className="flex w-full max-w-2xl flex-col gap-4 rounded-card bg-card p-4 shadow-xl sm:p-6"
+        className="flex w-full max-w-3xl flex-col gap-4 rounded-card bg-card p-4 shadow-xl sm:p-6"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header: close button, top-left of the card */}
-        <div className="flex items-center">
+        {/* Header: title + count + close */}
+        <div className="flex items-center justify-between gap-4">
+          <div className="min-w-0">
+            <p className="truncate font-display text-base font-bold text-ink">{project.title}</p>
+            <p className="text-xs text-ink-soft">
+              {index + 1} / {total}
+            </p>
+          </div>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-ink-soft transition-colors hover:bg-paper hover:text-ink"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-ink-soft transition-colors hover:bg-paper hover:text-ink"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Photo */}
-        <div className="relative aspect-4/3 max-h-[60vh] w-full overflow-hidden rounded-card bg-paper">
+        <div className="relative aspect-4/3 max-h-[58vh] w-full overflow-hidden rounded-card bg-paper">
           <Image
-            src={job.photos[index]}
-            alt={job.caption}
+            src={project.photos[index]}
+            alt={`${project.title} — photo ${index + 1}`}
             fill
             className="object-contain"
             sizes="(min-width: 768px) 768px, 100vw"
@@ -67,7 +73,7 @@ export function WorkModal({ job, index, onClose, onPrev, onNext }: Props) {
           {!isFirst && (
             <button
               type="button"
-              onClick={onPrev}
+              onClick={() => onIndexChange(index - 1)}
               aria-label="Previous photo"
               className="absolute top-1/2 left-3 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-card/90 text-ink shadow-sm transition-colors hover:bg-paper"
             >
@@ -78,7 +84,7 @@ export function WorkModal({ job, index, onClose, onPrev, onNext }: Props) {
           {!isLast && (
             <button
               type="button"
-              onClick={onNext}
+              onClick={() => onIndexChange(index + 1)}
               aria-label="Next photo"
               className="absolute top-1/2 right-3 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-card/90 text-ink shadow-sm transition-colors hover:bg-paper"
             >
@@ -87,15 +93,24 @@ export function WorkModal({ job, index, onClose, onPrev, onNext }: Props) {
           )}
         </div>
 
-        {/* Caption + page counter */}
-        <div className="flex items-start justify-between gap-4">
-          <p className="min-w-0 flex-1 whitespace-pre-line text-sm font-medium text-ink">
-            {job.caption}
-          </p>
-          <span className="shrink-0 whitespace-nowrap text-sm text-ink-soft">
-            {index + 1} of {job.photos.length}
-          </span>
-        </div>
+        {/* Thumbnail strip (scrollable) */}
+        {total > 1 && (
+          <div className="flex gap-2 overflow-x-auto pb-1">
+            {project.photos.map((photo, i) => (
+              <button
+                key={photo}
+                type="button"
+                onClick={() => onIndexChange(i)}
+                aria-label={`View photo ${i + 1}`}
+                aria-current={i === index}
+                className={`relative h-12 w-16 shrink-0 overflow-hidden rounded-md ring-2 transition-all sm:h-14 sm:w-20 ${i === index ? "ring-pine" : "ring-transparent opacity-60 hover:opacity-100"
+                  }`}
+              >
+                <Image src={photo} alt="" fill className="object-cover" sizes="80px" />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

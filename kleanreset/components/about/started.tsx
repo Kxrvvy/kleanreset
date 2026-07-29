@@ -10,7 +10,7 @@ export function Started() {
                         <Eyebrow>HOW WE STARTED</Eyebrow>
 
                         <h2 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                            A small crew with high standards
+                            A small business with high standards
                         </h2>
 
                         <div className="space-y-4 text-ink-soft">
@@ -21,8 +21,8 @@ export function Started() {
                                 real checklist, and treat every home and workplace like our own.
                             </p>
                             <p>
-                                Today we clean homes, Airbnbs, offices, and dental clinics across
-                                the area, and we still hold every job to that first-day standard.
+                                We clean homes and workspaces across the area, and we hold every
+                                job to that same first-day standard.
                             </p>
                         </div>
                     </div>
@@ -36,14 +36,14 @@ export function Started() {
                         </h2>
 
                         <blockquote className="border-l-2 border-mint pl-4 text-lg font-semibold leading-relaxed text-ink sm:text-[20px]">
-                            The best cleaning is the kind you never have to think about, because
-                            someone already thought of everything.
+                            The best cleaning service is one that gives you confidence that your
+                            space has been properly cared for.
                         </blockquote>
 
                         <p className="text-ink-soft">
-                            That means clear pricing, consistent people, and products that are
-                            safe for your family, pets, and the planet. No surprises, no pressure
-                            — just a space that&apos;s ready when you walk in.
+                            That means clear communication, a consistent approach, and a careful
+                            eye for detail on every visit. No surprises, no pressure — just a space
+                            that&apos;s ready when you walk in.
                         </p>
                     </div>
                 </div>
