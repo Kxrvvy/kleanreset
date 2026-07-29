@@ -36,10 +36,10 @@ export function Hero() {
 
                         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                             <Button href="/booking" variant="forest" className="w-full sm:w-auto">
-                                Book Your Cleaning →
+                                Book Now →
                             </Button>
                             <Button href="/contact" variant="forestOutline" className="w-full sm:w-auto">
-                                Get a Free Quote →
+                                Ask a Question →
                             </Button>
                         </div>
 

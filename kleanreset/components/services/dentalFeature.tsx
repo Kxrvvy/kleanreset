@@ -31,11 +31,11 @@ export function DentalFeature() {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4 md:justify-start">
-                        <Button href="/booking?category=commercial&type=clinic">
-                            Get a free quote
+                        <Button href="/booking?category=commercial">
+                            Book Now →
                         </Button>
-                        <Button href="/contact" variant="outline">
-                            Message us
+                        <Button href="/contact?service=commercial" variant="outline">
+                            Ask a Question
                         </Button>
                     </div>
                 </div>

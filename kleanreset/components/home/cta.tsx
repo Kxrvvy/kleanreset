@@ -10,19 +10,19 @@ export function CTA() {
                     </h2>
 
                     <p className="max-w-md text-celadon">
-                        Book your first clean or grab a free quote today — reliable, detailed, consistent cleaning you can trust.
+                        Book your cleaning and let Kleanreset take care of the rest — reliable, detailed, consistent cleaning you can trust.
                     </p>
 
                     <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
                         <Button href="/booking" variant="mint">
-                            Book Your Cleaning →
+                            Book Now →
                         </Button>
                         <Button
                             href="/contact"
                             variant="outline"
                             className="border-white/40! bg-transparent! text-white! hover:bg-white/10!"
                         >
-                            Get a Free Quote
+                            Ask a Question
                         </Button>
                     </div>
                 </div>
