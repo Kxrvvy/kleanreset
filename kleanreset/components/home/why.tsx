@@ -28,11 +28,11 @@ export function Why() {
             <div className="flex flex-col items-center justify-center gap-6 bg-pine px-4 py-16 sm:px-6 md:px-8 md:py-15 lg:px-10 xl:px-12">
                 <Eyebrow tone="light">WHY KLEANRESET</Eyebrow>
 
-                <h1 className="font-display text-4xl font-extrabold leading-tight text-white text-center md:text-[40px]">
+                <h2 className="font-display text-4xl font-extrabold leading-tight text-white text-center md:text-[40px]">
                     <span>
                         Professional cleaning, <br /> without the worry
                     </span>
-                </h1>
+                </h2>
 
                 <p className="max-w-2xl text-center text-[15px] text-celadon">
                     The little things are the whole job. Here&apos;s what you can count on every time we show up.

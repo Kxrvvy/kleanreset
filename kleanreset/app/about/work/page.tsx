@@ -3,12 +3,14 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Button } from "@/components/ui/button";
 import { WorkPortfolio } from "@/components/work/workPortfolio";
 import { workProjects } from "@/lib/workData";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Work | Kleanreset",
+export const metadata: Metadata = pageSeo({
+  title: "Our Work — Cleaning Projects in Edmonton | Kleanreset",
   description:
-    "Real cleaning projects completed by Kleanreset around Edmonton — see the homes and spaces we've cleaned for our clients.",
-};
+    "See real cleaning projects completed by Kleanreset around Edmonton — browse photos of the homes and spaces we've cleaned, by residential, deep and commercial work.",
+  path: "/about/work",
+});
 
 export default function WorkPage() {
   return (

@@ -37,9 +37,9 @@ export function Commercial() {
                 </div>
 
                 <div className="w-full max-w-6xl space-y-6">
-                    <h1 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
+                    <h2 className="font-display text-4xl font-extrabold leading-tight text-ink md:text-[40px]">
                         The values behind every clean
-                    </h1>
+                    </h2>
                 </div>
 
                 <div className="grid w-full max-w-6xl gap-6 pt-6 sm:grid-cols-2 lg:grid-cols-4">

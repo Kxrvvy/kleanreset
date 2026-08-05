@@ -1,9 +1,14 @@
 // app/booking/page.tsx
+import type { Metadata } from "next";
 import { BookingForm } from "@/components/booking/bookingForm";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata = {
-  title: "Book your cleaning — Kleanreset",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Book a Cleaning Service in Edmonton | Kleanreset",
+  description:
+    "Book your Edmonton cleaning online in two minutes. Choose your service and preferred date — residential estimates up front, commercial quotes on request.",
+  path: "/booking",
+});
 
 export default function BookingPage() {
   return (

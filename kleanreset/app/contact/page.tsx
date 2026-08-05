@@ -4,15 +4,18 @@
 // Quotes are handled inside the Booking Page, not here.
 // Optional ?service= preselects the question topic.
 
+import type { Metadata } from "next";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { QuestionForm } from "@/components/contact/questionForm";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata = {
-  title: "Ask a Question — Kleanreset",
+export const metadata: Metadata = pageSeo({
+  title: "Contact Kleanreset — Edmonton Cleaning Service",
   description:
-    "Have a question about Kleanreset's cleaning services in Edmonton, AB? Ask about availability, which service fits, or anything else. We reply within 24 hours.",
-};
+    "Have a question about Kleanreset's cleaning services in Edmonton, AB? Ask about availability, which service fits, or anything else — we reply within 24 hours.",
+  path: "/contact",
+});
 
 const CONTACT = {
   phones: "780 220 5497 / 780 245 6205",
