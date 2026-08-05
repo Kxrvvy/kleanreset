@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/footer";
+import {
+  SITE_URL,
+  SITE_NAME,
+  DEFAULT_TITLE,
+  DEFAULT_DESCRIPTION,
+  localBusinessJsonLd,
+} from "@/lib/seo";
 import "./globals.css";
 
 // Two-font system:
@@ -21,8 +28,39 @@ const dmSans = DM_Sans({
 
 
 export const metadata: Metadata = {
-  title: "Kleanreset — Cleaning done with care",
-  description: "Detailed, dependable cleaning for homes, Airbnbs, dental clinics, and offices in Edmonton, AB. Reliable. Detailed. Consistent.",
+  // metadataBase makes every relative canonical/OG URL resolve to an absolute one.
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    // Pages pass a full title, so the template is only a safety fallback.
+    template: "%s",
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_CA",
+    url: SITE_URL,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  icons: {
+    icon: "/kleanreset.png",
+    shortcut: "/kleanreset.png",
+    apple: "/kleanreset.png",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +75,12 @@ export default function RootLayout({
       className={`${plusJakarta.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
+        {/* LocalBusiness structured data — helps Google understand the business
+            (name, address, hours, area served) for rich results & local SEO. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
+        />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

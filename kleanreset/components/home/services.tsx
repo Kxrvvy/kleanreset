@@ -37,9 +37,9 @@ export function Services() {
                 <Eyebrow>OUR SERVICES</Eyebrow>
 
                 <div className="space-y-5">
-                    <h1 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] font-extrabold leading-tight text-ink text-center">
+                    <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] font-extrabold leading-tight text-ink text-center">
                         One team for every kind of clean
-                    </h1>
+                    </h2>
 
                     <p className="mx-auto max-w-2xl text-center text-ink-soft">
                         From weekly home upkeep to clinical-grade office sanitizing — pick what you need, and we handle the rest.
