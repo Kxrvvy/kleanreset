@@ -123,8 +123,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 border-t border-white/10 pt-6 text-xs text-celadon/60">
-          © {year} Kleanreset Cleaning Services. All rights reserved.
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-celadon/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {year} Kleanreset Cleaning Services. All rights reserved.</p>
+          <Link href="/privacy" className="transition-colors hover:text-mint-bright">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
