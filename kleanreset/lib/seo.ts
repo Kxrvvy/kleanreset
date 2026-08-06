@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 // the sitemap and robots.txt all derive from it. Placeholder until DNS is live.
 export const SITE_URL = "https://www.kleanreset.com";
 
-export const SITE_NAME = "Kleanreset";
+export const SITE_NAME = "Kleanreset Cleaning Services";
 
 export const DEFAULT_TITLE = "Professional Cleaning Services Edmonton | Kleanreset";
 export const DEFAULT_DESCRIPTION =

@@ -3,7 +3,7 @@ import HomePage from "@/components/home/homePage";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
-  title: "Professional Cleaning Services Edmonton | Kleanreset",
+  title: "Kleanreset Cleaning Services | Professional Cleaning Services Edmonton",
   description:
     "Reliable, detailed home & commercial cleaning in Edmonton, AB — recurring cleans, deep cleaning, carpet, Airbnb turnovers and office cleaning. Book online today.",
   path: "/",
