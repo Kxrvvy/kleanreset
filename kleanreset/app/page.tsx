@@ -3,9 +3,9 @@ import HomePage from "@/components/home/homePage";
 import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = pageSeo({
-  title: "Kleanreset Cleaning Services | Professional Cleaning Services Edmonton",
+  title: "Kleanreset Cleaning Services | Edmonton, AB",
   description:
-    "Reliable, detailed home & commercial cleaning in Edmonton, AB — recurring cleans, deep cleaning, carpet, Airbnb turnovers and office cleaning. Book online today.",
+    "Professional residential & commercial cleaning in Edmonton, Alberta — deep, move-in/out, office, Airbnb & carpet cleaning. Request your free quote today.",
   path: "/",
 });
 

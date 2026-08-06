@@ -12,9 +12,9 @@ export const SITE_URL = "https://www.kleanreset.com";
 
 export const SITE_NAME = "Kleanreset Cleaning Services";
 
-export const DEFAULT_TITLE = "Professional Cleaning Services Edmonton | Kleanreset";
+export const DEFAULT_TITLE = "Kleanreset Cleaning Services | Edmonton, AB";
 export const DEFAULT_DESCRIPTION =
-  "Reliable, detailed home and commercial cleaning in Edmonton, AB — recurring cleans, deep cleaning, carpet, Airbnb turnovers, and office cleaning. Book online.";
+  "Professional residential & commercial cleaning in Edmonton, Alberta — deep, move-in/out, office, Airbnb & carpet cleaning. Request your free quote today.";
 
 // Business facts (kept in sync with the footer / contact page).
 export const BUSINESS = {

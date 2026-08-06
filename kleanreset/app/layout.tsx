@@ -58,10 +58,13 @@ export const metadata: Metadata = {
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
   },
+  // Favicon: the 500×500 square logo satisfies Google's favicon guidelines
+  // (square, ≥48px, one stable URL) so it can replace the generic globe in
+  // search results after re-crawl. Declared for standard + Apple touch icons.
   icons: {
-    icon: "/kleanreset.png",
+    icon: [{ url: "/kleanreset.png", sizes: "500x500", type: "image/png" }],
     shortcut: "/kleanreset.png",
-    apple: "/kleanreset.png",
+    apple: [{ url: "/kleanreset.png", sizes: "180x180", type: "image/png" }],
   },
 };
 

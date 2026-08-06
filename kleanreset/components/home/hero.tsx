@@ -30,16 +30,20 @@ export function Hero() {
             <div className="relative z-10 mx-auto grid max-w-[1228px] content-center gap-10 px-4 pt-28 pb-16 min-h-[630px] sm:px-6 md:px-8 md:min-h-[710px] lg:min-h-[750px] lg:grid-cols-[minmax(0,1fr)_minmax(300px,540px)] lg:grid-rows-[auto_auto] lg:gap-x-16 lg:gap-y-6 lg:px-8 lg:pb-8 xl:gap-x-16 xl:px-12 min-[1440px]:min-h-[820px]">
                 {/* Intro text */}
                 <div className="space-y-5 md:space-y-6 lg:col-start-1 lg:row-start-1">
+                    {/* SEO H1 — descriptive brand + location. Visually hidden so the
+                        designed marketing headline below stays the visual focus. */}
+                    <h1 className="sr-only">Kleanreset Cleaning Services in Edmonton</h1>
+
                     <Eyebrow tone="gold">RESIDENTIAL & COMMERCIAL CLEANING</Eyebrow>
 
-                    <h1 className="font-display text-[clamp(2.25rem,5.4vw,3.9rem)] font-extrabold leading-[1.06] text-white lg:leading-[1.05]">
+                    <p className="font-display text-[clamp(2.25rem,5.4vw,3.9rem)] font-extrabold leading-[1.06] text-white lg:leading-[1.05]">
                         <span className="block">
                             Let us handle the
                             <br className="hidden sm:block" />
                             mess.
                         </span>
                         <span className="block text-forest">You enjoy the clean.</span>
-                    </h1>
+                    </p>
 
                     <p className="max-w-xl text-base text-white/90 sm:text-lg font-sans">
                         Reliable, detailed cleaning for Homes, Airbnbs, and offices — done right, every single time.

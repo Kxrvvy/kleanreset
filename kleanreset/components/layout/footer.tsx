@@ -124,7 +124,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 border-t border-white/10 pt-6 text-xs text-celadon/60">
-          © {year} Kleanreset. All rights reserved.
+          © {year} Kleanreset Cleaning Services. All rights reserved.
         </div>
       </div>
     </footer>
