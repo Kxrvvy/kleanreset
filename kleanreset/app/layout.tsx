@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/footer";
 import {
@@ -84,6 +86,10 @@ export default function RootLayout({
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* Vercel Web Analytics — page views & visitors (no cookies). */}
+        <Analytics />
+        {/* Vercel Speed Insights — real-user performance metrics (Core Web Vitals). */}
+        <SpeedInsights />
       </body>
     </html>
   );
