@@ -31,17 +31,17 @@ That's what this project is: the customer does the work of specifying the job up
 ## Architecture
 
 ```
-app/                    Routes (App Router) — one page per business page
-  layout.tsx             Root layout — metadata, JSON-LD, fonts, Analytics, Speed Insights
-  page.tsx                Home
-  manifest.ts              → /manifest.webmanifest (PWA metadata)
-  opengraph-image.tsx      Generated 1200×630 social-share image
-  robots.ts                 → /robots.txt
-  sitemap.ts                 → /sitemap.xml, submitted to Google Search Console
-  about/                   About ("Why Kleanreset")
-    work/                    "Our Work" — Facebook-style photo feed of completed jobs
-  services/                  Service list, live pricing table, checklists
-  booking/                   The booking form
+app/                          Routes (App Router) — one page per business page
+  layout.tsx                  Root layout — metadata, JSON-LD, fonts, Analytics, Speed Insights
+  page.tsx                    Home
+  manifest.ts                 → /manifest.webmanifest (PWA metadata)
+  opengraph-image.tsx         Generated 1200×630 social-share image
+  robots.ts                   → /robots.txt
+  sitemap.ts                  → /sitemap.xml, submitted to Google Search Console
+  about/                      About ("Why Kleanreset")
+    work/                     "Our Work" — Facebook-style photo feed of completed jobs
+  services/                   Service list, live pricing table, checklists
+  booking/                    The booking form
   contact/                    General-purpose inquiry form
   api/booking/                Server route — validates + emails a booking request
   api/contact/                Server route — validates + emails a contact inquiry
