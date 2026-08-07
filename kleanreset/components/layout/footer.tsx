@@ -125,9 +125,15 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-celadon/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} Kleanreset Cleaning Services. All rights reserved.</p>
-          <Link href="/privacy" className="transition-colors hover:text-mint-bright">
-            Privacy Policy
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/terms" className="transition-colors hover:text-mint-bright">
+              Terms &amp; Conditions
+            </Link>
+            <span aria-hidden className="text-celadon/40">|</span>
+            <Link href="/privacy" className="transition-colors hover:text-mint-bright">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
